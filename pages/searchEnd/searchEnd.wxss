@@ -1,0 +1,24 @@
+/* pages/searchEnd/searchEnd.wxss */
+.head{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+  height:100rpx;
+}
+.search{
+  font-size:30rpx;
+  color:#fff;
+  line-height:60rpx;
+  width:90rpx; 
+  background:#f55;
+  border-radius:10rpx;
+  text-align:center;
+}
+.tip{
+  font-size:28rpx;
+  color:#aeaeae;
+  text-align: center;
+  line-height: 50rpx;
+  clear:both
+}

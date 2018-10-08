@@ -1,0 +1,21 @@
+<head title = "{{pageTitle}}"/>
+<gotop isScrollView = "{{false}}" isShow = "{{showScroll}}"/>
+<!-- 顶部搜索 -->
+<navigator url = "/pages/seachPage/seachPage" hover-class='none' class = "pageTitle bg-index">
+    <iconInput disable = "{{true}}"></iconInput>
+</navigator>
+<!-- 顶部menu -->
+<scroll-view scroll-x class = "menuTitleBox" style = "{{fixMenu?(isIphoneX?'position:fixed;top:180rpx;':'position:fixed;top:130rpx;'):('position:relative;top:0rpx')}}">
+      <block wx:for = "{{menuTitleList}}" wx:key = "{{index}}">
+        <view class = "menuTitle {{index==currentNum?'hover':'normal'}}" catchtap='toggleMenu' data-value= "{{item.search}}" data-key = "{{index}}" data-title = "{{item.text}}">
+          {{item.text}}
+        </view>
+      </block>
+</scroll-view>
+<view>
+</view>
+<!-- 推荐 -->
+<indexComponent id = "indexComponent" style = "{{pageArguary==-1?'display:block':'display:none'}}"/>
+<block wx:for = "{{menuTitleList}}" wx:key = "{{index}}">
+  <quickView listIndex = "{{item.search}}" wx:if = "item.search != -1" id = "quick_{{item.search}}" style = "{{pageArguary==item.search && pageArguary!=-1?'display:block':'display:none'}}"/>
+</block>

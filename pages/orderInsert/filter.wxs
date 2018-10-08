@@ -1,0 +1,14 @@
+var filter = {
+  pstype: function (status) {
+    if(status == 0){
+      return "自提"
+    }else{
+      return "配送"
+    }
+  },
+
+}
+
+module.exports = {
+  pstype: filter.pstype
+}

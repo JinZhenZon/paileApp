@@ -1,0 +1,25 @@
+<!--pages/components/list/list.wxml-->
+<view class = "main">
+  <block wx:for = "{{list}}" wx:key = "{{index}}">
+      <navigator open-type='navigate' url = "../goodShow/goodShow">
+          <view  class = "goodItem">
+              <image src= "{{item.img_url || item.cover_url}}" lazy-load='{{true}}' class = "itemImg"></image>
+              <view class = "goodTitle">{{item.name}}</view>
+              <view class = "line">
+                <view class = "line_left">
+                    <view class = "group">
+                        ￥{{item.group_price}}
+                    </view>
+                    <view class = "throwPrice">
+                        单买价：￥{{item.price}}
+                    </view>
+                </view>
+                  
+                    <view class = "line_right bg-index">
+                        团购
+                    </view>
+              </view>
+          </view>
+      </navigator>
+  </block>
+</view>

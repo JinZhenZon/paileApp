@@ -1,0 +1,8 @@
+<head title  = "搜索结果-{{normalSearch}}"/>
+<list list = "{{searchList}}"/>
+<view class = "tip" wx:if = "{{!islast}}">
+  <text  class = "font icon-jiazai"></text>加载中
+</view>
+<view class = "tip" wx:else>
+  已加载全部
+</view>

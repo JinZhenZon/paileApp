@@ -1,0 +1,23 @@
+/* pages/components/gotop/gotop.wxss */
+.com-widget-goTop { 
+position: fixed; 
+bottom: 250rpx; 
+right: 10rpx; 
+background: rgba(0,0,0,0.48); 
+border-radius: 50%; 
+overflow: hidden; 
+z-index: 999; 
+} 
+.com-widget-goTop .icon-gotop{ 
+background-color: rgba(0, 0, 0, 0.8); 
+display: inline-block; 
+width: 100rpx; 
+height: 100rpx; 
+line-height: 136rpx; 
+font-size: 24rpx; 
+color: #ffffff; 
+text-align: center; 
+border-radius: 50%; 
+background: url("http://paile8.com/wenjian/wxappImage/top.png") no-repeat center 10rpx; 
+background-size: 40rpx auto; 
+}

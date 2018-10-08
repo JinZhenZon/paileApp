@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "swiper-slide": "../components/goodPageSwiper/goodPageSwiper",
+    "recomList": "../components/recommendedList/recommendedList",
+    "pingjia": "../components/pingjia/pingjia",
+    "goodDesc": "../components/goodDesc/goodDesc",
+    "head": "../components/header/header",
+    "gotop": "../components/gotop/gotop"
+  },
+  "enablePullDownRefresh": false
+}

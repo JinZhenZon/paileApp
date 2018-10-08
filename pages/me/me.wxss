@@ -1,0 +1,117 @@
+/* pages/me/me.wxss */
+Page{
+  background:#f7f7f7
+}
+/* 设置图标 */
+.seetingIcon{
+  width:50rpx;
+  height:50rpx;
+  position:absolute;
+  left:10rpx;
+  top:18rpx
+}
+/* 头像 */
+.header_icon_box{
+  width:750rpx;
+  height:75rpx;
+  position:relative;
+}
+.icon_box_inner{
+  width:680rpx;
+  height:150rpx;
+  position:absolute;
+  top:0rpx;
+  left:35rpx;
+  background:#fff;
+  box-shadow:0 3rpx 5rpx 5rpx #aeaeae;
+  margin:0 auto;
+  border-radius:15rpx;
+  
+}
+.icon_box_inner .icon{
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  margin-top:25rpx;
+  float:left;
+  margin-left:25rpx;
+}
+.icon image{
+  width:100%;
+  height:100rpx;
+}
+.icon_box_inner .name{
+  width:475rpx;
+  height:150rpx;
+  line-height:150rpx;
+  font-size:40rpx;
+  float: left;
+  margin-left:25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.button_box_inner{
+  width:680rpx;
+  height:150rpx;
+  position:absolute;
+  top:0rpx;
+  left:35rpx;
+  background:#fff;
+  box-shadow:0 3rpx 5rpx 5rpx #aeaeae;
+  margin:0 auto;
+  border-radius:15rpx;
+  text-align:center;
+  color:#aeaeae;
+
+}
+/* 登录按钮 */
+.btn_login{
+  width:220rpx;
+  height:60rpx;
+  font-size:30rpx;
+  line-height:60rpx;
+  margin-top:50rpx;
+  color:#fff;
+}
+.btn_hover_login{
+  opacity: 0.9;
+}
+/* 菜单 */
+.melist_box{
+  width:750rpx;
+  height:80rpx;
+  line-height:80rpx;
+  background:#fff;
+  margin-bottom:2rpx;
+}
+.melist_inner{
+  width:700rpx;
+  margin:0 auto;
+  font-size:30rpx;
+}
+.melist_title{
+  color:#333;
+  width:350rpx;
+  display: inline-block;
+}
+.melist_bar{
+  color:#aeaeae;
+  width:350rpx;
+  text-align:right;
+  display: inline-block;
+}
+
+/* 为我推荐 */
+.rec_title{
+  width:300rpx;
+  height:70rpx;
+  border-radius:70rpx;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(50deg,#f5576c,#f5576c 0,#ff52e5 100%,#ff52e5 0);
+  margin:30rpx auto;
+  margin-top:45rpx;
+  line-height:70rpx;
+  font-size:35rpx;
+}

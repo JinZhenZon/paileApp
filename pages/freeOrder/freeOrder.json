@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "head": "/pages/components/header/header",
+    "list": "/pages/components/freeOrderList/freeOrderList"
+  },
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,50 @@
+<head title="我的团购" />
+<view class="menu" hover-class="none" hover-stop-propagation="true">
+  <view class="menu_box" hover-class="none" hover-stop-propagation="false">
+    <view class="menu_box_check {{currentNum==0?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="0">
+      已团购
+    </view>
+    <view class="menu_box_check  {{currentNum==1?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="1">
+      待团购
+    </view>
+    <view class="menu_box_check {{currentNum==2?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="2">
+      待评价
+    </view>
+    <view class="menu_box_check {{currentNum==3?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="3">
+      已完成
+    </view>
+    <view class="menu_box_check {{currentNum==4?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="4">
+      团购失败
+    </view>
+  </view>
+  <view style="height:80rpx"></view>
+</view>
+
+
+<swiper class="swiperBox" current="{{currentNum}}" skip-hidden-item-layout="true" bindchange="swiperChange">
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="updata">
+      <list list="{{allArr}}" />
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;">
+      <list list="{{allArr}}" />
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;">
+      <list list="{{allArr}}" />
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;">
+      <list list="{{allArr}}" />
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;">
+      <list list="{{allArr}}" />
+    </scroll-view>
+  </swiper-item>
+</swiper>

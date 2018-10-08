@@ -1,0 +1,42 @@
+<!--pages/components/pingjia/pingjia.wxml-->
+<view>
+  <view class="title">
+    <text>宝贝评价（{{msg.length}}）</text>
+  </view>
+  <view style="background:#fff;">
+    {{JSON.string(msg)}}
+    <view wx:if="{{msg.length>0}}">
+      <block wx:for="{{msg}}" wx:key="{{index}}">
+        <view class="box" style="padding-top:10rpx;padding-bottom:10rpx;">
+          <view class="personIcon">
+            <image  src="{{item.userIcon}}" mode="widthFix" style="width:100%"></image>
+          </view>
+          <view class="personName">
+            {{item.nickname != ""? item.nickname:"匿名用户"}}
+          </view>
+        </view>
+        <view style="width:720rpx;margin:0 auto;">
+          <view class="pj_text">
+            {{item.subject}}
+          </view>
+          <view style="margin-top:10rpx;" class="pj_image">
+            <block wx:for="{{item.attachPictureList}}" wx:for-item = "data" wx:key="{{index}}">
+              <image catchtap='seeImage' data-list = "{{item.attachPictureList}}"  src="{{data}}" lazy-load='true'></image>
+            </block>
+          </view>
+        </view>
+        <navigator open-type='navigate' hover-class='none' url="../pingjiaAll/pingjiaAll">
+          <view class="seeAll">
+            查看全部
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <view wx:else style="text-align:center;font-size:30rpx;color:#999;line-height:100rpx;">
+      <view style="margin-top:40rpx;">
+        <text class="font icon-zanwuxiaoxi" style="font-size:150rpx;" />
+      </view>
+      暂无评价
+    </view>
+  </view>
+</view>

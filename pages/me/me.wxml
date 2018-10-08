@@ -1,0 +1,101 @@
+<!--pages/me/me.wxml-->
+<!-- header -->
+
+<head title="我的" />
+<!-- main -->
+<view>
+  <navigator wx:if = "{{isLogin}}" url="/pages/seeting/seeting" hover-class='none'>
+    <view class="header_icon_box bg-index">
+      <view class="icon_box_inner">
+        <view class="icon">
+          <image src="{{userInfo.head_icon}}"></image>
+        </view>
+        <view class="name">
+          <text>{{userInfo.nickname}}</text>
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <view wx:if = "{{!isLogin}}">
+      <view class="header_icon_box bg-index">
+      <view class="button_box_inner">
+        <button class = "btn_login bg-index" hover-class  = "btn_hover_login" open-type='getUserInfo' bindgetuserinfo='login'>登录</button>
+      </view>
+    </view>
+  
+  </view>
+  <view style="width:750rpx;background:#f2f2f2;height:100rpx;">
+  </view>
+  <view>
+    <view class="melist_box">
+      <navigator url="/pages/order/order?userCode={{userInfo.id}}" hover-class='none' class='melist_inner'>
+        <view class="melist_title">
+          我的订单
+        </view>
+        <view hover-class="none" class="melist_bar">
+          查看我的订单
+          <text class="font icon-iconfontplatformentrance" style="font-size:30rpx;line-height:"></text>
+        </view>
+      </navigator>
+      <view style="clear:both"></view>
+    </view>
+    <view class="melist_box">
+      <navigator url="/pages/groupOrder/groupOrder" hover-class='none' class='melist_inner'>
+        <view class="melist_title">
+          我的团购
+        </view>
+        <view class="melist_bar">
+          查看团购订单
+          <text class="font icon-iconfontplatformentrance" style="font-size:30rpx;line-height:"></text>
+        </view>
+      </navigator>
+      <view style="clear:both"></view>
+    </view>
+    <view class="melist_box">
+      <navigator url="/pages/freeOrder/freeOrder" hover-class='none' class='melist_inner'>
+        <view class="melist_title">
+          我的试用
+        </view>
+        <view class="melist_bar">
+          查看试用订单
+          <text class="font icon-iconfontplatformentrance" style="font-size:30rpx;line-height:"></text>
+        </view>
+      </navigator>
+      <view style="clear:both"></view>
+    </view>
+    <view class="melist_box">
+      <navigator url="/pages/yjorder/yjorder" hover-class='none' class='melist_inner'>
+        <view class="melist_title">
+          佣金分享
+        </view>
+        <view class="melist_bar">
+          查看佣金分享
+          <text class="font icon-iconfontplatformentrance" style="font-size:30rpx;line-height:"></text>
+        </view>
+      </navigator>
+      <view style="clear:both"></view>
+    </view>
+    <view class="melist_box">
+      <view class='melist_inner'>
+        <view class="melist_title">
+          我的钱包
+        </view>
+        <view class="melist_bar">
+          查看我的钱包
+          <text class="font icon-iconfontplatformentrance" style="font-size:30rpx;line-height:"></text>
+        </view>
+      </view>
+      <view style="clear:both"></view>
+    </view>
+  </view>
+</view>
+<view class="recomand">
+  <view class="rec_title">
+    <text style="line-height:70rpx;">为我推荐</text>
+  </view>
+  <view class="res_inner">
+    <view style="clear:both;"></view>
+    <list list="{{goodList}}" />
+    <view style="clear:both;"></view>
+  </view>
+</view>

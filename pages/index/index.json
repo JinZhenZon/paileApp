@@ -1,0 +1,10 @@
+{
+  "usingComponents":{
+    "iconInput" : "../components/iconInput/iconInput",
+    "head": "../components/header/header",
+    "gotop": "../components/gotop/gotop",
+    "quickView":"../components/quickView/quickView",
+    "indexComponent": "../components/indexComponent/indexComponent"
+  },
+  "enablePullDownRefresh": false
+}

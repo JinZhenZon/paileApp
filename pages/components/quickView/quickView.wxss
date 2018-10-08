@@ -1,0 +1,2 @@
+/* pages/components/quickView/quickView.wxss */
+@import "../../../utils/iconfont.wxss";

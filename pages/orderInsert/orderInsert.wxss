@@ -1,0 +1,172 @@
+/* pages/orderInsert/orderInsert.wxss */
+Page{
+  background:#ffffff;
+}
+.insert_title{
+  width:750rpx;
+  height:100rpx;
+}
+.userInfo{
+  width:650rpx;
+  padding:20rpx;
+  height:140rpx;
+  margin:0 auto;
+  background:#fff;
+  border-radius:20rpx;
+  box-shadow: 0px 0px 3px #999;
+  display:flex;
+  justify-content:space-around;
+  align-content: center;
+  align-items: center;
+}
+.address_icon{
+  width:60rpx;
+}
+.address_icon image{
+  width:100%;
+}
+.address_box{
+  width:510rpx;
+  font-size:28rpx;
+  line-height: 60rpx;
+}
+.person{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.personName{
+  width:230rpx;
+  float:left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+.personPhone{
+  width:270rpx;
+  float:right;
+  text-align:right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size:28rpx;
+}
+.address{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp:2;
+  display: box;
+  -webkit-box-orient: vertical;
+  width:100%;
+  line-height:45rpx;
+  max-height:90rpx;
+}
+.cargo_contine{
+  width:750rpx;
+  background:#fff;
+  margin-top:20rpx;
+  border-top:10rpx solid #f7f7f7;
+}
+.shopName,.shop_text{
+  float:left;
+  margin-left:10rpx;
+}
+.shopName{
+  width:50rpx;
+}
+.shopName image{
+  width:100%;
+  margin-top:10rpx
+}
+.shop_text{
+  font-size:26rpx;
+  line-height:70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex:1;
+  width:650rpx
+}
+/* 中间 */
+.list_contine{
+  padding:20rpx 15rpx;
+  background:#f7f7f7;
+  display:flex;
+  width:720rpx;
+  margin:0 auto;
+  justify-content: space-around;
+}
+.cargoLeft{
+  width:150rpx;
+}
+.cargoLeft image{
+  width:100%;
+  border-radius:7rpx;
+}
+.cargoCenter{
+  width:450rpx;
+  padding:0 10rpx;
+}
+.cargoTitle{
+    font-size:28rpx;
+    color:#333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp : 2;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    line-height:40rpx;
+}
+.cargoSpec{
+  font-size:25rpx;
+  line-height:50rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#999999;
+}
+.cargoRight{
+  width:130rpx;
+}
+.price{
+  text-align: right;
+  font-size:25rpx;
+  color:#f55;
+  line-height:50rpx;
+}
+.cargoCount{
+  text-align: right;
+  font-size:25rpx;
+  color:#999;
+  line-height:50rpx;
+}
+/*  */
+.t_line{
+  width:750rpx;
+  background:#fff;
+  border-top:2rpx solid #f7f7f7;
+}
+.t_line .line_contine{
+    width:720rpx;
+    height:60rpx;
+    margin:0 auto;
+}
+.t_line .line_contine::after{
+  content:"";
+  clear:both;
+  display:block;
+  height:0;
+  visibility: hidden;
+}
+.line_left{
+  float:left;
+  font-size:25rpx;
+  line-height:60rpx;
+  color:#333;
+}
+.line_right{
+  float: right;
+  color:#999999;
+  font-size:25rpx;
+  line-height: 60rpx;
+}

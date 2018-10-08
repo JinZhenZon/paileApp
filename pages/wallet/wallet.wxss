@@ -1,0 +1,103 @@
+Page{
+  background:#fff;
+}
+.header{
+  width:750rpx;
+}
+.user_box{
+  width:720rpx;
+  margin:0 auto;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.user_header{
+  width:100rpx;
+  height:100rpx;
+}
+.user_header image{
+  width:100rpx;
+  height:100rpx;
+}
+.user_nick{
+  width:600rpx;
+  font-size:32rpx;
+  color:#fff;
+  line-height: 100rpx;
+}
+.content{
+  padding-top:30rpx;
+  width:720rpx;  
+  margin:0 auto;
+}
+.content_title{
+  font-size:30rpx;
+  color:#aeaeae;
+}
+.content_title text{
+  font-size:40rpx;
+}
+.money_box{
+  width:720rpx;
+  margin:0 auto;
+  display: -webkit-flex;
+  display: flex;
+  justify-content:space-around;
+  align-content: center;
+  align-items: center;
+  margin-top:30rpx;
+}
+
+.money_ico{
+  font-size:25rpx;
+  color:rgb(255, 102, 21);
+  width:40rpx;
+  line-height:70rpx;
+  margin-top:10rpx;
+}
+.money_text{
+  font-size:50rpx;
+  line-height:80rpx;
+  color:rgb(255, 102, 21);
+  width:550rpx;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.money_btn{
+  padding:10rpx 20rpx;
+  font-size:28rpx;
+  line-height:28rpx;
+  margin-top:20rpx;
+  color:rgb(255, 102, 21);
+  border:2rpx solid rgb(255, 102, 21);
+  border-radius:8rpx;
+}
+.tip_box{
+  clear:both;
+}
+.tip_title{
+  font-size:30rpx;
+  color:#aeaeae;
+  margin-top:30rpx;
+  margin-bottom:10rpx;
+}
+.tip_inner{
+  font-size: 26rpx;
+  line-height:60rpx;
+  color:#aeaeae;
+  clear:both;
+
+
+}
+.tip_inner .tip_btn{
+  font-size: 28rpx;
+  color:rgb(255, 102, 21);
+  float:right;
+  background:#fff;
+}
+.tip_inner .tip_btn::after{
+  border:0rpx solid #fff;
+}

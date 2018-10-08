@@ -1,0 +1,9 @@
+var filter = {
+  income:function(a,b,c){
+    var d = ((a - b) * (c / 100) / 100 * 0.7).toFixed(2);
+    return d;
+  }
+}
+module.exports = {
+  income: filter.income,
+}

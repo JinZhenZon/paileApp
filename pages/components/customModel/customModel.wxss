@@ -1,0 +1,27 @@
+@import "../../../utils/iconfont.wxss";
+Page{
+  width:100%;
+  height:100%;
+  z-index:999;
+}
+.jim-model-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding:10rpx;
+  text-align: center; 
+  margin: auto;
+  background:rgba(0,0,0,0.6);
+}
+.jim-model-icon text{
+  color:#fff;
+  font-size:80rpx;
+  line-height:130rpx;  
+}
+.jim-model-text{
+  line-height:130rpx;
+  color:#fff;
+  font-size:30rpx;
+}

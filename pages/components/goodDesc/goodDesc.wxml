@@ -1,0 +1,18 @@
+<!--pages/components/goodDesc/goodDesc.wxml-->
+        <view class = "title">
+        <text class = "font icon-biaoqian" style = "font-size:40rpx"/>
+        <text>商品详情</text>
+    </view>
+ <view style="background:#fff;">
+      <view style="height:10rpx;clear:both;"></view>
+      
+      <view wx:if="{{descArr.length > 0}}" wx:for="{{descArr}}" wx:key="{{index}}" style="font-size: 0;">
+          <view wx:if="{{item.type == 1}}" style="width:720rpx;margin:10rpx auto;color:#000;font-size:30rpx;line-height:50rpx">
+              {{item.content_desrc}}
+          </view>
+          <image wx:if="{{item.type ==2}}" src="{{item.img_url}}" lazy-load='true' style="outline:0;margin:0;padding:0;border:0" alt="图片获取异常" mode = "widthFix" style = "width:100%" catchtap="imageShow" data-list = "{{descArr}}"/>
+      </view>
+      <view wx:if="{{descArr.length == 0}}" class = "mainFontSize" style="line-height: 1.2rem;color:#aeaeae;text-align: center">
+          无
+      </view>
+  </view>

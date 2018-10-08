@@ -1,0 +1,39 @@
+<head title = "品质团购"/>
+<view class="" hover-class="none" hover-stop-propagation="true">
+    <view class="menu_box" hover-class="none" hover-stop-propagation="false">
+        <view class="menu_box_check {{currentNum==0?'hover':'normal'}}"hover-class="none" hover-stop-propagation="false"  catchtap = "taggleMenu" data-num = "0">
+            默认
+        </view>
+        <view class="menu_box_check  {{currentNum==1?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap = "taggleMenu" data-num = "1">
+            价格
+        </view>
+        <view class="menu_box_check {{currentNum==2?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap = "taggleMenu" data-num = "2">
+            品质
+        </view>
+    </view>
+    <view style = "height:80rpx"></view>
+    <list list = "{{normalArr}}" style = "background:#333;{{currentNum != '0'?'display:none':'display:block'}}"/>
+    <view class = "isLoading" wx:if  = "{{currentNum == 0 && !isLastNormal }}">
+        <text class = "font icon-jiazai"></text>
+        加载中
+    </view>
+    <view class = "isAllload" wx:if  = "{{currentNum==0 && isLastNormal}}">
+        已加载全部
+    </view>
+    <list list = "{{priceArr}}"  style = "background:#f00;{{currentNum != '1'?'display:none':'display:block'}}"/>
+      <view class = "isLoading" wx:if = "{{currentNum == 1 && !isLastprice }}">
+        <text class = "font icon-jiazai"></text>
+        加载中
+    </view>
+    <view class = "isAllload" wx:if  = "{{currentNum==1 && isLastprice}}">
+        已加载全部
+    </view>
+    <list list = "{{goodArr}}" style = "background:#fff;{{currentNum != '2'?'display:none':'display:block'}}"/>
+    <view class = "isLoading" wx:if = "{{currentNum == 2 && !isLastGood }}">
+        <text class = "font icon-jiazai"></text>
+        加载中
+    </view>
+    <view class = "isAllload" wx:if  = "{{ currentNum==2 && isLastGood }}">
+        已加载全部
+    </view>
+</view>

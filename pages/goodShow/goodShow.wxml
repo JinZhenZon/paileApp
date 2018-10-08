@@ -1,0 +1,139 @@
+<!--pages/goodShow/goodShow.wxml-->
+
+<scroll-view scroll-y="{{isStopBodyScroll}}" class="scroll" enable-back-to-top="true" scrollTop="{{scrollTop}}" bindscroll="Fscroll">
+  <gotop isScrollView="{{true}}" isShow="{{showScroll}}" bindgotop="gotop" />
+  <loading wx:if="{{showLoading}}">加载中</loading>
+  <head title="商品详情" />
+  <view class="Page">
+    <swiper-slide imgUrl="{{goodInfo.urlList}}" />
+    <view class="itemBox">
+      <view class="goodTitle">
+        {{goodInfo.name}}
+      </view>
+      <view class="share" style="text-align:center;margin-top:20rpx;">
+
+        <button open-type='share'>
+          <text class="font icon-fenxiang1" style="color:rgb(250, 116, 43);"></text>
+          <view>立即分享</view>
+        </button>
+      </view>
+    </view>
+    <view class="itemBox itemI">
+      <view class="price">
+        ￥ {{goodInfo.price}}
+      </view>
+      <view class='selar_count'>
+        付款：{{goodInfo.sales_count}}人
+      </view>
+    </view>
+    <!-- 商家地址 -->
+    <view class="itemLine">
+      <view class="itemBox itemI">
+        <view class="left icon">
+          <text class="font icon--px-1" style="font-size:50rpx;line-height:50rpx;"></text>
+        </view>
+        <view class="right text">
+          商家地址：{{goodInfo.location}}
+        </view>
+      </view>
+    </view>
+    <!-- 商家电话 -->
+    <view class="itemLine">
+      <view class="itemBox itemI" catchtap='callShop'>
+        <view class="text">
+          商家电话：{{goodInfo.shopPhone}}
+        </view>
+        <view class="icon">
+          <text class="font icon-dianhua" style="font-size:40rpx;line-height:40rpx;color:#aeaeae"></text>
+        </view>
+      </view>
+    </view>
+    <view style="width:750rpx">
+      <image src="http://www.paile8.com/wxmall/img/down.b7f7f49.jpg" style="width:100%" mode="widthFix"></image>
+    </view>
+    <!-- 评价 -->
+    <view>
+      <pingjia cargoCode="{{cargoCode}}" />
+    </view>
+    <!-- 商品描述 -->
+    <view>
+      <goodDesc caogoCode="{{cargoCode}}" />
+    </view>
+    <!-- 底部推荐商品 -->
+    <view>
+      <view class="title">
+        <text class="font icon-like" style="font-size:40rpx;"></text>
+        <text>为你推荐</text>
+      </view>
+      <recomList/>
+    </view>
+    <view style="background:#f2f2f2;color:#aeaeae;font-size:30rpx;line-height:90rpx;text-align:center">
+      到底了
+    </view>
+    <!-- 底部菜单 -->
+  </view>
+  <view class="menuBox" style="padding-bottom:{{isIphoneX?'50rpx':'0rpx'}}">
+    <navigator url="/pages/shop/shop?shopId={{goodInfo.shop_id}}" hover-class='none' hover-stop-propagation="{{false}}">
+      <view class="menu_icon_small">
+        <view class="icon">
+          <text class="font icon-dianpu " style="font-size:50rpx;line-height:60rpx;"></text>
+        </view>
+        <view>店铺</view>
+      </view>
+    </navigator>
+    <view class="menu_icon_small">
+      <view class="icon">
+        <text class="font icon-xiaoxi" style="font-size:50rpx;line-height:60rpx;"></text>
+      </view>
+      <view>客服</view>
+    </view>
+    <view class="menu_icon_big bg-index" catchtap='showPug'>
+      立即购买
+    </view>
+  </view>
+  <view style="height:120rpx"></view>
+  <!-- 选择规格 -->
+  <view style="padding-bottom:{{isIphoneX?'50rpx':'0rpx'}}" class="pugBox" hidden="{{pugHidden}}" animation="{{animationData}}">
+    <view hidden="{{buytagHid}}" animation="{{animationTag}}" class="buytag">
+      请选择规格
+    </view>
+    <view class="pugBox_title">
+      <view class="pugBox_icon">
+        <image src="{{actualImgUrl}}"></image>
+      </view>
+      <view class="pugBox_text">
+        <view class="price" style = "{{hiddenTag?'line-height:140rpx;font-size:50rpx':'line-height:100rpx;font-size:40rpx;'}}">￥ {{actualPrice}}</view>
+        <view class="tag" hidden="{{hiddenTag}}">
+          <view >
+            请选择
+            <block wx:for="{{pugtagArr}}" wx:key="{{index}}">
+              <text wx:if="{{!clickArr[index]}}">{{item}} </text>
+            </block>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <scroll-view scroll-y class="pugBoxInner">
+      <block wx:for="{{goodInfo.cargoDescList}}" wx:key="{{index}}">
+        <view class="descTitle">
+          {{item.title}}
+        </view>
+        <view class="desc">
+          <block wx:for-item="items" wx:for="{{item.descList}}" wx:for-index="index2" wx:key="{{index2}}">
+            <view catchtap='click' data-group="{{index}}" data-index="{{index2}}" class="descItem {{clickArr[index] && clickArr[index].key === index2?'cursor':'normal'}}">
+              {{items.desc}}
+            </view>
+          </block>
+        </view>
+        <view style="clear:both"></view>
+      </block>
+      <view style="height:30rpx;"></view>
+    </scroll-view>
+    <view class="pugBoxBot" catchtap='gobuy'>
+      确定
+    </view>
+  </view>
+  <view catchtap="hiddenPug" class="mask" hidden='{{maskHidden}}'>
+  </view>
+</scroll-view>

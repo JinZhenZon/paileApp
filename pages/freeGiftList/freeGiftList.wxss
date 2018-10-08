@@ -1,0 +1,135 @@
+Page{
+  background:#fff;
+  width:100%;
+  height:100%;
+}
+.tip{
+  width:750rpx;
+  background:rgba(255,204,204,1);
+  display:flex;
+  display: -webkit-flex;
+  font-size:30rpx;
+  justify-content: space-around;
+  align-items: center;
+}
+.tip_text{
+  width:660rpx;
+  line-height:45rpx;
+  font-size:30rpx;
+  color:#f55;
+}
+.icon-cuowu{
+  width:40rpx;
+  color:#fff!important;
+}
+/* 
+  商品列表
+*/
+.list{
+  width:720rpx;
+  padding:20rpx 15rpx;
+  border-bottom:10rpx solid #f2f2f2;
+  align-items: center;
+  align-content: center;
+}
+.good_pic{
+  width:150rpx;
+  height:150rpx;
+}
+.good_pic image{
+  width:150rpx;
+  height:150rpx;
+  
+}
+.good_content{
+  width:550rpx;
+  height:150rpx;
+  
+}
+.good_title{
+  word-break:break-all;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  font-size: 30rpx;
+  line-height:45rpx;
+  width:550rpx;
+  height:90rpx;
+}
+.price_box{
+  width:550rpx;
+
+}
+.price_box:after{
+  content:" ";
+  clear:both;
+  height:0;
+  display: block;
+  visibility: hidden;
+}
+.price{
+  color:#f55;
+  font-size:28rpx;
+  line-height:45rpx;
+  float: left;
+  margin-top:20rpx;
+  
+}
+.needperson{
+  color:#aeaeae;
+  font-size:25rpx;
+  line-height: 45rpx;
+  float: left;
+  margin-left:20rpx;
+  margin-top:20rpx;
+  
+}
+.free_btn{
+  float:right;
+  color:#fff;
+  text-align:center;
+  font-size:28rpx;
+  padding:10rpx 15rpx;
+  border-radius:10rpx;
+  margin-top:10rpx;
+  background:#f76;
+}
+/*
+  底部提示 
+*/
+.tip_bt{
+  font-size:28rpx;
+  color:#aeaeae;
+  text-align: center;
+  line-height: 50rpx;
+  clear:both
+}
+/* 
+  没有任何数据时候 页面自适应高度试用
+ */
+ .notData_box{
+   display:flex;
+   justify-content: flex-start;
+   flex-direction:column;
+   height:100%;
+   width:100%;
+   position:relative;
+ }
+ .box_style{
+   width:100%;
+   text-align:center;
+   padding-top:50%;
+ }
+ .nodata_icon text{
+   color:#aeaeae;
+   font-size:120rpx;
+   top:50%;
+ }
+  .nodata_text{
+    color:#aeaeae;
+    font-size: 30rpx;
+    line-height: 70rpx;
+  }
+ 

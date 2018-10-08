@@ -1,0 +1,19 @@
+/**
+ * @description 公共filter
+ * @todo 提供了页面中大多数地方需要的filter
+ * 
+ */
+var filter = {
+  /**
+   * @description 保留几位小数
+   * @param {number} 原数字
+   * @param {number} 要保留的位数
+   * @return {number} 处理过后的数字
+   */
+  fix: function (val, num) {
+    return parseFloat(val).toFixed(num);
+  }
+}
+module.exports = {
+  fix: filter.fix
+}

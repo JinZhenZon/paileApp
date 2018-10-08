@@ -1,0 +1,40 @@
+<head title="修改信息" />
+<view class="user_box lineBox" hover-class="none" hover-stop-propagation="false">
+    <view class="header_icon" hover-class="none" hover-stop-propagation="false">
+        <image src="{{userhead}}" lazy-load="false" catchtap='look' data-url = "{{userhead}}"></image>
+    </view>
+    <view class="user_Info" hover-class="none" hover-stop-propagation="false">
+        <view class="user_nick" hover-class="none" hover-stop-propagation="false">
+            {{nickname}}
+        </view>
+        <view class="user_sex" hover-class="none" hover-stop-propagation="false">
+            {{sex == 1 ? '男':'女'}}
+        </view>
+    </view>
+</view>
+<view class="seeting_ban lineBox" hover-class="none" hover-stop-propagation="false" catchtap='changeIcon'>
+    <view class="title" hover-class="none" hover-stop-propagation="false">修改头像</view>
+    <view class="contant" hover-class="none" hover-stop-propagation="false">
+        <image class="" src="{{userhead}}" lazy-load="false"></image>
+        <text class="font icon-iconfontplatformentrance" selectable="false" space="false" decode="false"></text>
+    </view>
+</view>
+<view class="seeting_ban lineBox" hover-class="none" hover-stop-propagation="false" catchtap='changenick'>
+    <view class="title" hover-class="none" hover-stop-propagation="false">修改昵称</view>
+    <view class="contant" hover-class="none" hover-stop-propagation="false"> 
+        <text class="font icon-iconfontplatformentrance" style = "float:right;" selectable="false" space="false" decode="false"></text>
+        <view hidden = "{{!change}}" style = "text-align:right;float:right;line-height:80rpx;font-size:30rpx;width:400rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+        {{nickname}}
+        </view>
+        <input hidden = "{{change}}" value = "" type = "text" placeholder="请输入要修改的名字"  maxlength = "30" focus = "{{isFocus}}" bindconfirm = "confirm" style = "text-align:left;width:400rpx;border:1rpx solid #aeaeae;margin:0 auto;font-size:30rpx;line-height:80rpx;height:80rpx;"></input>
+    </view>
+</view>
+<view class="seeting_ban lineBox" hover-class="none" hover-stop-propagation="false" catchtap='changeSex'>
+    <view class="title" hover-class="none" hover-stop-propagation="false">修改性别</view>
+    <view class="contant" hover-class="none" hover-stop-propagation="false"> 
+        <text class="font icon-iconfontplatformentrance" style = "float:right;" selectable="false" space="false" decode="false"></text>
+        <view style = "text-align:right;float:right;line-height:80rpx;font-size:30rpx;width:400rpx;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+            {{sex == 1 ? '男':'女'}}
+        </view>
+    </view>
+</view>

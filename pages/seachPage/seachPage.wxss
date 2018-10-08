@@ -1,0 +1,61 @@
+/* pages/scachPage/seachPage.wxss */
+.head{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  align-items: center;
+  height:100rpx;
+}
+.search{
+  font-size:30rpx;
+  color:#fff;
+  line-height:60rpx;
+  height:60rpx;  
+  width:90rpx; 
+  background:#f55;
+  border-radius:10rpx;
+  text-align:center;
+}
+.menu_box {
+  width : 730rpx;
+  margin:0 auto;
+  margin-top:20rpx;
+}
+.menu_box .title{
+  font-size:32rpx;
+  /* font-weight:800; */
+  color:#f55;
+ 
+}
+.menu_box .box_contine{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: center;
+  align-content: center;
+  width:730rpx;
+  
+}
+
+.menu_box .box_contine .insert{
+  padding:10rpx 20rpx;
+  font-size:30rpx;
+  background: #f55;
+  color:#fff;
+  border-radius:10rpx;
+  max-width:150rpx;
+  height:30rpx;
+  line-height:30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left:20rpx;
+  margin-top:20rpx;
+}
+.menu_box .tip {
+  font-size:30rpx;
+  color:#aeaeae;
+  text-align: center;
+  line-height:80rpx;
+  height:80rpx;
+}

@@ -1,0 +1,80 @@
+<wxs src="./filter.wxs" module="filter" />
+<view style = "background:#f2f2f2">
+      <block  wx:for = "{{list}}" wx:key= "{{index}}">
+          <view class = "listBox">
+              <view class = "list_top">
+                  <view class = "shopIcon">
+                      <image src = "{{item.shopIcon}}" ></image>
+                  </view>
+                  <view class = "shopName">
+                      {{item.shopName}}
+                  </view>
+                  <view class = "status">
+                      {{filter.filterStatus(item.status)}}
+                  </view>
+              </view>
+              <!-- ?orderNumber={{item.orderNumber}} -->
+              <navigator url = "/pages/orderInsert/orderInsert?orderNumber={{item.orderNumber}}"  hover-class='none' class = "list_contine">
+                    <view class  = "cargoLeft">
+                        <image src = "{{item.cargoList[0].cargoPicture}}"></image>
+                    </view>
+                    <view class = "cargoCenter">
+                        <view class = "cargoTitle">
+                            {{item.cargoList[0].cargoTitle}}
+                        </view>
+                        <view class = "cargoSpec">
+                            {{item.cargoList[0].cargoSpec}}
+                        </view>
+                    </view>
+                    <view class='cargoRight'>
+                        <view class = "price">￥ {{item.cargoList[0].originalPrice/100}}</view>
+                        <view class = "normalPrice">￥ {{item.cargoList[0].presentPrice/100}}</view>
+                        <view class = "cargoCount">x {{item.cargoList[0].cargoCount}}</view>
+                    </view> 
+              </navigator>
+              <view class = "tip">
+                  共 {{item.cargoList[0].cargoCount}} 件商品 实付款 {{item.finalAmount/100}} 元
+              </view>
+              <view class = "bottom">
+                  
+                  <view wx:if = "{{item.status == 1}}" class = "bottom_btn normal_btn">
+                      再来一单
+                  </view>
+                  <view class = "bottom_tip" wx:if = "{{item.status == 3}}">
+                      取消时间：<view style = "color:#f55;display:inline-block">{{item.updateTime}}</view>
+                  </view>
+                  <view wx:if = "{{item.status == 3}}" class = "bottom_btn normal_btn">
+                      删除订单
+                  </view>
+
+                  <view wx:if = "{{item.status == 5}}" class = "bottom_btn gradual_btn">
+                      立即支付
+                  </view>
+                  <view wx:if = "{{item.status == 5}}" class = "bottom_btn normal_btn">
+                      取消订单
+                  </view>
+                    <view class = "bottom_tip" wx:if = "{{item.status == 7}}">
+                        邀请剩余：<view style = "color:#f55;display:inline-block">{{filter.timeTostr(item.groupbuy.remainingTime)}}
+                        </view>
+                  </view>
+                  
+                   <view wx:if = "{{item.status == 7}}" class = "bottom_btn gradual_btn">
+                      邀请好友
+                  </view>
+                  <view wx:if = "{{item.status == 8}}" class = "bottom_btn gradual_btn">
+                      催发货
+                  </view>
+                  <view wx:if = "{{item.status == 10}}" class = "bottom_btn gradual_btn">
+                      确定收货
+                  </view>
+                  <view wx:if = "{{item.status == 10}}" class = "bottom_btn normal_btn">
+                      查看物流
+                  </view>
+                  <view wx:if = "{{item.status == 15}}" class = "bottom_btn gradual_btn">
+                      立即评价
+                  </view>
+              </view>
+              <view style = "clear:both"></view>
+          </view>
+      </block>
+</view> 

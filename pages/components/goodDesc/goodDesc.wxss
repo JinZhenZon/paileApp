@@ -1,0 +1,17 @@
+/* pages/components/goodDesc/goodDesc.wxss */
+@import "../../../utils/iconfont.wxss";
+.title{
+  background:#f2f2f2;
+  color:#f55;
+  font-size:30rpx;
+  line-height:80rpx;
+  height:80rpx;
+  text-align: center;
+  word-break:break-all;
+}
+.title text{
+  word-break:break-all;
+  padding-left:15rpx;
+  display: inline-block;
+  margin:0 auto;
+}

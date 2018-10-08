@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "head": "../components/header/header",
+    "customModel":"../components/customModel/customModel"
+  },
+  "enablePullDownRefresh": false
+}

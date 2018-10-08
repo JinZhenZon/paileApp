@@ -1,0 +1,19 @@
+<!--pages/components/list/list.wxml-->
+<view class = "main">
+  <block wx:for = "{{list}}" wx:key = "{{index}}">
+      <navigator open-type='navigate' url = "../goodShow/goodShow?cargoCode={{item.cargo_id||item.id}}">
+          <view  class = "goodItem">
+              <image src= "{{item.img_url || item.cover_url}}" lazy-load='{{true}}' class = "itemImg"  binderror = "errorImg"  data-errorimg="{{index}}"></image>
+              <view class = "goodTitle">{{item.name}}</view>
+              <view class = "line">
+                    <text style = "color:#f55;font-weight:800">
+                        ￥{{item.price}}
+                    </text>
+                    <text style = "color:#aeaeae">
+                        {{item.sales_count}}人付款
+                    </text>
+              </view>
+          </view>
+      </navigator>
+  </block>
+</view>

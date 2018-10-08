@@ -1,0 +1,59 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "include": [
+      "./utils",
+      "./pages/components/freeOrderList",
+      "./pages/components/goodDesc",
+      "./pages/components/goodPageSwiper",
+      "./pages/components/gotop",
+      "./pages/components/groupOrderList",
+      "./pages/components/header",
+      "./pages/components/iconInput",
+      "./pages/components/indexComponent",
+      "./pages/components/list",
+      "./pages/components/listGroup",
+      "./pages/components/orderList",
+      "./pages/components/pingjia",
+      "./pages/components/pingjiaPage",
+      "./pages/components/quickView",
+      "./pages/components/recommendedList",
+      "./pages/components/swiperSlide",
+      "./pages/freeGiftList",
+      "./pages/freeList",
+      "./pages/freeOrder",
+      "./pages/goodShow",
+      "./pages/groupOrder",
+      "./pages/groupTrait",
+      "./pages/index",
+      "./pages/index",
+      "./pages/me",
+      "./pages/order",
+      "./pages/orderInsert",
+      "./pages/pingjiaAll",
+      "./pages/pingjiasert",
+      "./pages/seachPage",
+      "./pages/searchEnd",
+      "./pages/seeting",
+      "./pages/shop",
+      "./pages/sign",
+      "./pages/trait",
+      "./pages/wallet",
+      "./pages/yjorder"
+    ],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "default": {
+      "outputSourceFiles": true
+    },
+    "applicationName": "demo",
+    "openGraph": {},
+    "meta": {}
+  }
+}

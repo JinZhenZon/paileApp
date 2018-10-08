@@ -1,0 +1,9 @@
+/* pages/components/swiper/swiper.wxss */
+.bowerSlide{
+  width:750rpx;
+  height:375rpx;
+}
+.slideImage{
+  width:750rpx;
+  height:375rpx;
+}

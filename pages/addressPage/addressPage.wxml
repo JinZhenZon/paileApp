@@ -1,0 +1,113 @@
+<head title = "地址选择"/>
+<block wx:for = "{{addressList}}" wx:key = "{{index}}">
+  <view class = "addressItem">
+    <view catchtap = "setAddress" data-item = "{{item}}" class = "box" hover-class="none" hover-stop-propagation="false">
+        <view class= "info" hover-class="none" hover-stop-propagation="false">
+            <view class="top" hover-class="none" hover-stop-propagation="false">
+                {{item.name}}，{{item.phone}}
+            </view>
+            <view class="body" hover-class="none" hover-stop-propagation="false">
+                {{item.city}}{{item.address}}
+            </view>
+        </view>
+        <view class="using" hover-class="none" hover-stop-propagation="false">
+            使用
+        </view>
+    </view>
+    
+    <view class = "bottom_box" hover-class='none' hover-stop-propagation='false'>
+        <view catchtap = "setfirst" data-id = "{{item.id}}" data-index = "{{index}}" wx:if = "{{item.isfirst != 1}}" hover-class = "none" class = "normal">
+          <text class = "font icon-weixuanzhong"/>设为默认
+        </view>
+        
+        <view wx:if = "{{item.isfirst == 1}}" hover-class = "none" class = "current">
+          <text class = "font icon-xuanzhong"/>已设为默认
+        </view>
+        <view class = "ico">
+            <view class = "edit" catchtap = "edit" data-item = "{{item}}" data-index = "{{index}}">编辑</view>
+            <view class = "remove" catchtap = "remove" data-id = "{{item.id}}" data-index = "{{index}}">删除</view>            
+        </view> 
+    </view>
+   </view> 
+</block>
+<view style = "height:100rpx;"></view>
+<view class = "btn" hover-class='none' hover-stop-propagation='false' style = "background:#fff;">
+      <view class = "manual" catchtap = "boxShow">
+          手动添加
+      </view>
+      <view class = "wxAdd" catchtap='openwxAdd'>
+          微信添加
+      </view>
+</view>
+<!-- 添加/编辑收货地址 -->
+<!-- wx:if = "{{boxShow}}" -->
+<view wx:if = "{{boxShow}}" class = "powerBox" hover-class='none' hover-stop-propagation='false' bindtap = "hidbox">
+    <view hover-class = "none" hover-stop-propagation='false' class = "power">
+        <view style = "position:absolute;right:20rpx;top:10rpx;width:50rpx;height:50rpx;border-radius:50%;text-align:center;vertical-align:center;" bindtap='hideditBox'>
+            <text class = "font icon-cuowu" style = "font-size:30rpx;line-height:50rpx;color:#999;"/>
+        </view>
+        <view class = "title" hover-class = "none" hover-stop-propagation='false'>
+          {{boxType == 0 ? '添加收货新地址':'编辑收货地址'}}
+        </view>
+        <view class = "line" hover-stop-propagation='false' hover-class='none'>
+            <view class = "line-title">
+                联系人
+            </view>
+            <view class = "line-contine" hover-class = "none" hover-stop-propagation='false'>
+                <input type = "text" placeholder = "姓名" value = "{{address_name}}" bindinput='setValue'  data-name = "address_name"></input>
+            </view>
+        </view>
+        <view class = "line" hover-stop-propagation='false' hover-class='none'>
+            <view class = "line-title">
+                手机号码
+            </view>
+            <view class = "line-contine" hover-class = "none" hover-stop-propagation='false'>
+                <input type = "number" placeholder = "电话" maxlength = "11"  value = "{{address_phone}}" bindinput='setValue'  data-name = "address_phone"></input>
+            </view>
+        </view>
+        <view class = "line" hover-stop-propagation='false' hover-class='none'>
+            <view class = "line-title">
+                选择地区
+            </view>
+            <view class = "line-contine" hover-class = "none" hover-stop-propagation='false'>
+                 <picker mode="region" bindchange="bindRegionChange" bindchange = "changCity" value="{{region}}">
+                    <view class="tui-picker-detail">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                 </picker>
+            </view>
+        </view>
+        <view class = "line" hover-stop-propagation='false' hover-class='none' style = "align-items:flex-start;">
+            <view class = "line-title" >
+                详细地址
+            </view>
+            <view class = "line-contine2" hover-class = "none" hover-stop-propagation='false'>
+                <textarea class = "text-area"  fixed="true" placeholder='详细地址' value = "{{address}}" show-confirm-bar = "false" bindinput='setValue'  data-name = "address"/>
+                <text class = "font icon-dizhi" bindtap='getCurrentAddress'></text>
+            </view>
+        </view>
+        <view hover-class = "none" hover-style = "opacity:0.9" class =  "address_btn {{address_name != '' && address_phone !='' && address != '' && region.length != 0 ? 'current_btn':'normal_btn'}}" bindtap="{{address_name != '' && address_phone !='' && address != '' && region.length != 0 ? (boxType == 0 ?'addNewAddress':'editAddress'):''}}">
+            确定
+        </view>
+
+    </view>
+    <view  wx:if = "{{addressBox}}" style = "position:absolute;bottom:0;left:0;z-index:101;width:750rpx;height:460rpx;background:#fff;">
+    <view style = "width:750rpx;font-size:30rpx;line-height:60rpx;color:#aeaeae;text-align:center;">
+      请点击选择地址
+    </view>
+    <!--定位后选择地址的box-->
+    <scroll-view scroll-y style = "height:400rpx">
+        <block wx:for = "{{boxList}}" wx:key = "{{index}}">
+          <view bindtap = "clickAddress" data-address = "{{item}}">
+            <view style = "overflow:hidden;text-overflow:ellipsis;white-space: nowrap;height:120rpx;border-bottom:1rpx solid #f2f2f2">
+                <view style = "width:730rpx;padding-left:15rpx;padding-right:15rpx;font-size:30rpx;font-weight:800;color:#333;line-height:60rpx;">
+                    {{item.title}}
+                </view>
+                <view style = "width:730rpx;padding-left:15rpx;padding-right:15rpx;font-size:28rpx;color:#aeaeae;line-height:60rpx;">
+                    {{item.address}}
+                </view>
+            </view>
+          </view>
+        </block>
+    </scroll-view>
+</view>
+</view>
+<customModel id = "model" config = "{{modelConfig}}"/>

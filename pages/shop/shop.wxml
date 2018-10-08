@@ -1,0 +1,52 @@
+<head title="店铺名字很长很长的名字真的很长很长" />
+<navigator url="/pages/seachPage/seachPage" hover-class='none' class="pageTitle">
+  <iconInput disable="{{true}}"></iconInput>
+</navigator>
+<view class="shopInfo">
+  <view class="shop_icon" hover-class="none" hover-stop-propagation="false">
+    <image src="{{shopInfo.licence_url}}" />
+  </view>
+  <view class="shop_info_main" hover-class="none" hover-stop-propagation="false">
+    <view class="shop_title" hover-class="none" hover-stop-propagation="false">
+      {{shopInfo.name}}
+    </view>
+    <view class="shop_business" hover-class="none" hover-stop-propagation="false">
+      {{shopInfo.business_desc == ""?"该店家未选择经营范围":'经营范围：'+shopInfo.business_desc}}
+    </view>
+  </view>
+  <view class="shop_info_btn" hover-class="none" hover-stop-propagation="false">
+    <view class="like" hover-class="none" hover-stop-propagation="false">
+      <text class="font icon-mayishangchengiconshangchuan-"></text>
+    </view>
+    <view class="link_text" hover-class="none" hover-stop-propagation="false">
+      收藏
+    </view>
+  </view>
+</view>
+<view class="nav" hover-class="none" hover-stop-propagation="false" style="{{bindnav?(isIphoneX?'position:fixed;top:180rpx;':'position:fixed;top:130rpx;height:80rpx;border-bottom:1px solid #ccc;background:rgba(255,255,255,0.92)'):('position:relative;top:0rpx;')}}">
+  <view class="navbar {{currentnum == 0? 'current':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="togglenav" data-num="0">
+    <text class="font icon-danpinbaokuan" style="font-size:40rpx" /> 优选单品
+  </view>
+  <view class="navbar {{currentnum == 1? 'current':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="togglenav" data-num="1">
+    <text class="font icon-tuangou" style="font-size:40rpx"></text> 精选团购
+  </view>
+</view>
+<view wx:if="{{bindnav}}" style="height:80rpx;" />
+<view  style="display:{{currentnum == 0?'block':'none'}}" >
+    <list list="{{single}}"/>
+    <view hidden = "{{islastSingle}}" style = "clear:both;font-size:30rpx;line-height:80rpx;color:#aeaeae;text-align:center;">
+        <text class = "font icon-jiazai"/>加载中
+    </view>
+    <view hidden = "{{!islastSingle}}" style = "clear:both;font-size:30rpx;line-height:80rpx;color:#aeaeae;text-align:center;">
+        已加载全部
+    </view>
+</view>
+<view style="display:{{currentnum == 1?'block':'none'}}">
+  <group-list list="{{group}}"  />
+  <view hidden = "{{islastGroup}}" style = "clear:both;font-size:30rpx;line-height:80rpx;color:#aeaeae;text-align:center;">
+        <text class = "font icon-jiazai"/>加载中
+    </view>
+    <view hidden = "{{!islastGroup}}" style = "clear:both;font-size:30rpx;line-height:80rpx;color:#aeaeae;text-align:center;">
+        已加载全部
+    </view>
+</view>

@@ -1,0 +1,38 @@
+
+/* 页面顶部样式 */
+.pageTitle{
+  width:750rpx;
+  height:100rpx;
+  display:flex;
+  display:-webkit-flex;
+  justify-content: center;
+  align-items:center;
+}
+/* 菜单总样式 */
+.menuTitleBox{
+  width:750rpx;
+  white-space: nowrap;
+  background:#fff;
+  z-index:998;
+}
+/* tab子选项样式 */
+.menuTitle{
+  display: inline-block;
+  padding-left:20rpx;
+  padding-right:20rpx;
+  line-height:80rpx;
+  
+}
+/* tab菜单未选中 */
+.normal{
+  font-size:30rpx;
+  border-bottom:1rpx solid #f2f2f2;
+  color:#333
+}
+/* tab菜单选中状态 */
+.hover{
+  font-size:30rpx;
+  border-bottom:4rpx solid #f55; 
+  color:#f55;
+  line-height: 76rpx;
+}

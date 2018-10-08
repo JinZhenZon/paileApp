@@ -1,0 +1,8 @@
+<!-- 页面头部 -->
+  <view v-if = "isIphoneX" style = "width:750rpx;position:fixed;top:0;height: 50rpx;z-index:99" class = "bg-index"></view>
+  <view style="position:fixed; z-index:99;top:{{isIphoneX?'50rpx':'0'}};width:750rpx;height:140rpx;text-align:center;line-height:170rpx;color:#fff;font-size:30rpx;" class="bg-index">
+    <view style = "width:300rpx;margin:0 auto;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">
+      {{title}}
+    </view>
+  </view>
+  <view style="height:{{isIphoneX?'190rpx':'140rpx'}};background:#fff"></view>

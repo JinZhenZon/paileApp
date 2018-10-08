@@ -1,0 +1,7 @@
+{
+  "usingComponents":{
+    "head":"/pages/components/header/header",
+    "Sinput":"/pages/components/iconInput/iconInput"
+  },
+  "enablePullDownRefresh": false
+}

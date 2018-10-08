@@ -1,0 +1,75 @@
+/* pages/components/list/list.wxss */
+.main{
+  width:750rpx;
+
+}
+.goodItem {
+  margin-top:10rpx;
+  width:360rpx;
+  height:550rpx;
+  float: left;
+  margin-left:10rpx;
+  background:#fff;
+  box-shadow:0rpx 0rpx 3rpx 3rpx #eee;
+  border-radius:10rpx;
+  overflow:hidden;
+}
+.itemImg{
+  width:360rpx;
+  height:360rpx;
+}
+
+.goodTitle{
+  width:320rpx;
+  margin:0 auto;
+  font-size:30rpx;
+  line-height:40rpx;
+  height:80rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break:break-all;
+}
+.line{
+  margin-top:10rpx;
+}
+.line_left{
+  width:250rpx;
+  float:left;
+  font-size:30rpx;
+  margin-left:10rpx;
+}
+.line_right{
+  width:90rpx;
+  float:right;
+  color:#fff;
+  text-align:center;
+  border-radius:60rpx;
+  line-height:60rpx;
+  font-size:30rpx;
+  margin-right:10rpx;
+}
+.group{
+  font-size:32rpx;
+  color:#f55;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+}
+.throwPrice{
+  color:#aeaeae;
+  font-size:25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  text-decoration:line-through;
+}
+.bg-index{
+  background:-webkit-linear-gradient( left, #fdb591, #ea5556 );
+background:-o-linear-gradient( right, #fdb591, #ea5556 );
+background:-moz-linear-gradient( right, #fdb591, #ea7855 );
+background:linear-gradient(to right, #fdb591, #ea5556);
+}

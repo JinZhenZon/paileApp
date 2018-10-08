@@ -1,0 +1,10 @@
+<view>
+  <list list="{{listArr}}" />
+  <view style = "clear:both"></view>
+  <view wx:if = "{{!islast}}" style="font-size:30rpx;line-height:100rpx;text-align:center;color:#aeaeae">
+    <text class="font icon-jiazai"></text>加载中
+  </view>
+  <view wx:if = "{{islast}}" style="font-size:30rpx;line-height:100rpx;text-align:center;color:#aeaeae">
+    已加载全部
+  </view>
+</view>

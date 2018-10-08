@@ -1,0 +1,4 @@
+<view class = "box" style = "width:{{width}}rpx">
+    <text class = "font icon-sousuo" style = "font-size:40rpx;color:#aeaeae;line-height:60rpx;"></text>
+    <input type = "text" bindconfirm='confirm' placeholder='{{placeholder}}' disabled='{{disable}}' confirm-type = "search" cursor = "100" value = "{{input_text}}" bindinput='input' data-text = "" placeholder-class = "searchHolder" class = "search" style = "width:{{width-70}}rpx"></input>
+</view>

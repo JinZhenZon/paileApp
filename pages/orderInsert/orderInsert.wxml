@@ -1,0 +1,133 @@
+<wxs src = "./filter.wxs" module = "filter"/>
+<head title = "订单详情"/>
+<view class="insert_title bg-index" hover-class="none" hover-stop-propagation="false">
+        <view class="userInfo" hover-class="none" hover-stop-propagation="false">
+            <view class="address_icon" hover-class="none" hover-stop-propagation="false">
+                <image class="" src="/image/free-icon.png" mode="widthFix" lazy-load="false"></image>
+            </view>
+            <view class="address_box" hover-class="none" hover-stop-propagation="false">
+                <view class="person" hover-class="none" hover-stop-propagation="false">
+                    <view class = "personName">联系人:{{orderInfo.contactName}}</view>
+                    <view class = "personPhone">17695518131</view>
+                </view>
+                <view class="address" hover-class="none" hover-stop-propagation="false">
+                    地址:{{orderInfo.addressProvince}}{{orderInfo.addressCity}}{{orderInfo.addressBlock}}{{orderInfo.addressStreet}}
+                </view>
+            </view>
+        </view>    
+        <view class = "cargo_contine">
+            <view class="shopName" hover-class="none" hover-stop-propagation="false">
+                <image class="shop_icon" src="{{orderInfo.shopIcon}}" mode="widthFix" lazy-load="false">
+                </image>
+            </view>
+            <view class="shop_text" hover-class="none" hover-stop-propagation="false">
+                {{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}{{orderInfo.shopName}}
+            </view>
+            <view style = "clear:both"></view>
+        </view>
+        <view class = "list_contine">
+            <view class  = "cargoLeft">
+                <image src = "{{orderInfo.cargoList[0].cargoPicture}}" mode = "widthFix"></image>
+            </view>
+            <view class = "cargoCenter">
+                <view class = "cargoTitle">
+                    {{orderInfo.cargoList[0].cargoTitle}}
+                </view>
+                <view class = "cargoSpec">
+                    {{orderInfo.cargoList[0].cargoSpec}}
+                </view>
+            </view>
+            <view class='cargoRight'>
+                <view class = "price">￥ {{orderInfo.cargoList[0].presentPrice/100}}</view>
+                <view class = "cargoCount">x {{orderInfo.cargoList[0].cargoCount}}</view>
+            </view> 
+        </view>
+        <view class = "t_line">
+            <view class = "line_contine">
+              <view class = "line_left">
+                  订单编号
+              </view>
+              <view class = "line_right">
+                  {{orderInfo.orderNumber}}
+              </view>
+            </view>
+        </view>
+        <view class = "t_line">
+            <view class = "line_contine">
+              <view class = "line_left">
+                  购买数量
+              </view>
+              <view class = "line_right">
+                  {{orderInfo.cargoList[0].cargoCount}}
+              </view>
+            </view>
+        </view>
+        <view class = "t_line">
+            <view class = "line_contine">
+              <view class = "line_left">
+                  付款明细
+              </view>
+            </view>
+        </view>
+        <view class = "t_line" style = "background:#f7f7f7">
+            <view class = "line_contine">
+              <view class = "line_left" style = "color:#999;">
+                  商品原价
+              </view>
+               <view class = "line_right">
+                  ￥{{orderInfo.cargoAmount/100}}
+              </view>
+            </view>
+        </view>
+        <view class = "t_line" style = "background:#f7f7f7">
+            <view class = "line_contine">
+              <view class = "line_left" style = "color:#999;">
+                  优惠价格
+              </view>
+               <view class = "line_right">
+                  ￥{{orderInfo.discountAmount/100}}
+              </view>
+            </view>
+        </view>
+        <view class = "t_line" style = "background:#f7f7f7">
+            <view class = "line_contine">
+              <view class = "line_left" style = "color:#999;">
+                  实付价格
+              </view>
+               <view class = "line_right">
+                  ￥{{orderInfo.finalAmount/100}}
+              </view>
+            </view>
+        </view>
+          <view class = "t_line">
+            <view class = "line_contine">
+              <view class = "line_left">
+                  配送方式
+              </view>
+              <view class = "line_right">
+                  {{filter.pstype(orderInfo.distributionType)}}
+              </view>
+            </view>
+        </view>
+         <view class = "t_line">
+            <view class = "line_contine">
+              <view class = "line_left">
+                  下单时间
+              </view>
+              <view class = "line_right">
+                  {{orderInfo.createTime}}
+              </view>
+            </view>
+        </view>
+</view>
+<view style = "height:930rpx;"></view>
+<view style = "clear:both;border-top:10rpx solid #f7f7f7">
+</view>
+
+<view style = "margin:0 auto;width:200rpx;margin-top:20rpx;">
+     <image src= "https://img.alicdn.com/tfs/TB1tqpnegMPMeJjy1XcXXXpppXa-148-48.png" mode = "widthFix" style = "width:100%;"></image>
+</view> 
+<view wx:if = "{{goodArr.length == 0}}" style = "font-size:30rpx;color:#aeaeae;">
+    加载动画
+</view>
+<list list = "{{goodArr}}"/>

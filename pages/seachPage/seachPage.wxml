@@ -1,0 +1,39 @@
+<head title  = "搜索页"/>
+<view class = "head" hover-stop-propagation="{{false}}" hover-class='none'>
+  <Sinput bindtext = "bindText" width = "610" bindconfirm = "customSearch" placeholder = "{{normalSearch}}"/>
+  <view class = "search" hover-stop-propagation='{{false}}' hover-class='none' catchtap = "customSearch">
+    搜索
+  </view>
+</view>
+<!-- hot -->
+<view class="menu_box" hover-class="none" hover-stop-propagation="false">
+    <text class="title" selectable="false" space="false" decode="false">
+       <text class = "font icon-remen4"/> 热门搜索
+    </text>
+    <view wx:if = "{{hot.length>0}}" class="box_contine" hover-class="none" hover-stop-propagation="false">
+        <block  wx:key = "{{index}}" wx:for="{{hot}}">   
+            <view catchtap='searchHot' data-name = "{{item.name}}" class="insert" hover-class='none' hover-stop-propagation='{{false}}'>
+                {{item.name}}
+            </view>
+        </block>
+    </view>
+     <view wx:else  class="tip" hover-class='none' hover-stop-propagation='{{false}}'>
+            暂 无
+     </view>
+</view>
+<view class="menu_box" hover-class="none" hover-stop-propagation="false">
+    <text class="title" selectable="false" space="false" decode="false">
+        <text class = "font icon-105"/> 历史搜索
+    </text>
+    <view wx:if = "{{history.length>0}}" class="box_contine" hover-class="none" hover-stop-propagation="false">
+        <block   wx:key = "{{index}}" wx:for="{{history}}">   
+            <view class="insert" hover-class='none' hover-stop-propagation='{{false}}' catchtap = "taphistory" data-name = "{{item}}">
+                {{item}}
+            </view>
+        </block>
+        
+    </view>
+    <view wx:else class="tip" hover-class='none' hover-stop-propagation='{{false}}'>
+            暂 无
+        </view>
+</view>

@@ -1,0 +1,62 @@
+<wxs src = "./filter.wxs" module = "filter"/>
+<view hover-class='none' class = "{{list.length==0?'notData_box':''}}">
+<head title = "分享赚钱"></head>
+<view wx:if = "{{list.length!=0}}" class="box" hover-class="none" hover-stop-propagation="false">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class="good_box" hover-class="none" hover-stop-propagation="false">
+            <view class="good_icon" hover-class="none" hover-stop-propagation="false">
+               <image src="{{item.icon}}" lazy-load="true" />
+            </view>
+            
+            <view class="good_body" hover-class="none" hover-stop-propagation="false">
+                <view class="good_title" hover-class="none" hover-stop-propagation="false">
+                    {{item.title}}
+                </view>
+                <view class = "Info">
+                      <view class = "left">
+                          <view class="good_normalPrice" hover-class="none" hover-stop-propagation="false">
+                              现价:{{item.cargoPrice/100}}
+                          </view>
+                          <view class="discount_box" hover-class="none" hover-stop-propagation="false">
+                              <text class="font icon-zizhumaidanquan" selectable="false" space="false" decode="false"></text> {{item.discountPrice/100}}
+                          </view>
+                          <view class="good_nowPrice" hover-class="none" hover-stop-propagation="false">
+                              劵后：￥{{(item.cargoPrice-item.discountPrice)/100}}
+                          </view>
+                      </view>
+                      <button id = "share_btn" open-type='share' data-good = "{{item}}">
+                          <view class = "right">
+                                <text class = "icon-fenxiang1 font"></text>
+                                <view>分享赚{{filter.income(item.cargoPrice,item.discountPrice,item.quotaValue)}}</view>
+                            </view>
+                      </button>
+                        
+                      
+                </view>
+            </view>
+        </view>
+    </block>
+</view>
+
+
+ <!-- 针对不同的状态显示不同的提示 -->
+    <view  wx:if = "{{firstRequested && list.length==0}}" style = "display:flex;flex-grow:2;height:auto;background:#fff;">
+         <view class= "box_style">
+          <view class = "nodata_icon">
+            <text class = "font icon-zanwuneirong"></text>
+          </view>
+          <view class = "nodata_text">
+             还没有数据呢
+          </view>
+          </view>
+    </view>
+    <view class="tip_bt" wx:elif="{{!firstRequested || !islast}}">
+      <text class="font icon-jiazai"></text>加载中
+    </view>
+    <view class="tip_bt" wx:else>
+      暂无更多
+    </view>
+    </view>
+
+
+    <customModel id = "model" config = "{{modelConfig}}"/>

@@ -1,0 +1,41 @@
+<wxs src="../../utils/utils.wxs" module="filter" />
+<head title = "我的钱包"/>
+<view class="header bg-index" hover-class="none" hover-stop-propagation="false">
+    <view class="user_box" hover-class="none" hover-stop-propagation="false">
+        <image class="user_header" src="https://img1.360buyimg.com/da/jfs/t24421/202/1448980410/92212/55bdb284/5b5edd53N433c624a.gif?v=0.966840479932148" lazy-load="false"></image>
+        <view class="user_nick" hover-class="none" hover-stop-propagation="false">
+            无用户名
+        </view>
+    </view>
+</view>
+<view class="content" hover-class="none" hover-stop-propagation="false">
+    <view class="content_title" hover-class="none" hover-stop-propagation="false">
+        <text class="font icon-goumai menyicon" selectable="false" space="false" decode="false"></text> 账户余额
+    </view>
+    <view class="money_box" hover-class="none" hover-stop-propagation="false">
+     
+        <view class="money_ico" hover-class="none" hover-stop-propagation="false">
+            ￥
+        </view>
+        <view class="money_text" hover-class="none" hover-stop-propagation="false">
+          {{filter.fix(balance,2)}}
+        </view>
+        <view class="money_btn" hover-class="none" hover-stop-propagation="false">
+            提现
+        </view>
+    </view>
+    <view class="tip_box" hover-class="none" hover-stop-propagation="false">
+        <view class="tip_title" hover-class="none" hover-stop-propagation="{{false}}">  
+          <text class = "font icon-biaoqian"/> 小贴士：
+        </view>
+        <view class="tip_inner" hover-class="none" hover-stop-propagation="false">
+            <text>1、邀请新用户得1元现金立即到账</text> <button open-type='share' data-type = "{{1}}" class = "tip_btn">立即邀请</button>
+        </view>
+        <view class="tip_inner"  hover-class="none" hover-stop-propagation="false">
+            <text>2、分享也可以赚佣金</text>  <view class = "tip_btn" bindtap = "shareGood">立即分享</view>
+        </view>
+        <view class="tip_inner" hover-class="none" hover-stop-propagation="false">
+            <text>3、邀请的用户去分享商品也可获得佣金</text>
+        </view>
+    </view>
+</view>

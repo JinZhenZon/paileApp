@@ -1,0 +1,29 @@
+<view>
+<block wx:for="{{list}}" wx:key = "{{index}}">
+       <view class = "box" style = "padding-top:10rpx;padding-bottom:10rpx;">
+                    <view class = "personIcon">
+                          <image src = "{{item.userIcon}}" mode = "widthFix" style = "width:100%"></image>
+                    </view>
+                    <view class = "personName">
+                        {{item.nickname != ""? item.nickname:"匿名用户"}}
+                    </view>
+                </view>
+                <view style = "width:720rpx;margin:0 auto;">
+                    <view class = "pj_text">
+                        {{item.subject}}
+                    </view>
+                    <view style = "margin-top:10rpx;" class = "pj_image">
+                      <block wx:for-item = "item2" wx:for = "{{item.attachPictureList}}" wx:key = "{{index}}">
+                            <image src = "{{item2}}" mode = "aspectFill" lazy-load='true'></image>
+                      </block>
+                    </view>
+                    <view style = "text-align:center;" wx:if = "{{item.subject=='' && item.attachPictureList.length == 0}}">
+                        <view>
+                            <text class = "font icon-zanwu" style= "font-size:100rpx;color:#999;"></text>
+                        </view>
+                        <view class = "pj_text">该用户没有留下任何痕迹</view>
+                    </view>
+                    <view style = "width:750rpx;margin-left:-15rpx;margin-top:20rpx;clear:both;border-bottom:10rpx solid #f2f2f2"></view>
+        </view>
+</block>
+</view>

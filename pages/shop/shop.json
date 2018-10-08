@@ -1,0 +1,9 @@
+{
+  "usingComponents":{
+    "head":"/pages/components/header/header",
+    "list":"/pages/components/list/list",
+    "group-list": "/pages/components/listGroup/listGroup",
+    "iconInput": "../components/iconInput/iconInput"
+  },
+  "enablePullDownRefresh": false
+}

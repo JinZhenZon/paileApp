@@ -1,0 +1,121 @@
+<swiper-slide imgUrl="{{bannerList}}" />
+<!-- 页面中的menu -->
+<view style="width:750rpx">
+  <view class="lineBox pagemenu">
+    <view>
+      <navigator url="/pages/freeGiftList/freeGiftList" hover-class="none" hover-hover-stop-propagation='true'>
+        <image src="/image/free-icon.png"></image>
+        <view>免费试用</view>
+      </navigator>
+    </view>
+    <view>
+      <navigator hover-stop-propagation='true' url="/pages/freeList/freeList" hover-class='none'>
+        <image src="/image/share-icon.png"></image>
+        <view>分享赚钱</view>
+      </navigator>
+    </view>
+    <view>
+      <navigator hover-stop-propagation="true" url="/pages/trait/trait" hover-class='none'>
+        <image src="/image/trait-icon.png"></image>
+        <view>品质优选</view>
+      </navigator>
+    </view>
+    <view>
+      <navigator hover-stop-propagation="true" url="/pages/groupTrait/groupTrait" hover-class='none'>
+        <image src="/image/group-icon.png"></image>
+        <view>品质团购</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view>
+  <image src="{{bannerImg}}" mode="widthFix" style="width:750rpx"></image>
+</view>
+<!-- main -->
+<view class="main">
+  <view class="mainTitle">
+    <view style="background:#fff;height:45rpx"></view>
+    <view class="tarit">
+      品质爆款
+    </view>
+    <view style="clear:both;"></view>
+    <view style="width:750rpx;">
+      <swiper skip-hidden-item-layout="true" circular autoplay interval="3000" display-multiple-items="2.5" style="width:750rpx;height:480rpx;margin-top:30rpx">
+        <block wx:for="{{hotList}}" wx:key="index">
+          <swiper-item style="height:450rpx;">
+            <view style="background:#f2f2f2;width:10rpx;float:left;">
+            </view>
+            <view style="float:right;background:#fff;width:290rpx;border-radius:7rpx;">
+              <image src="{{item.httpurl}}" style = "width:290rpx;height:290rpx;" lazy-load='{{true}}'/>
+              <view style="height:160rpx">
+                <view class="goodTitle">{{item.name}}</view>
+                <view class="line">
+                  <text style="color:#f55;font-weight:800">
+                                    ￥{{item.price}}
+                                </text>
+                  <text style="color:#aeaeae">
+                                    {{item.sales_count}}人付款
+                                </text>
+                </view>
+              </view>
+            </view>
+            <view style="clear:both"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="mainTitle">
+    <view style="height:60rpx"></view>
+    <view class="tarit">
+      品质团购
+    </view>
+    <navigator url="/pages/groupTrait/groupTrait" hover-stop-propagation="true" hover-class="none" class="seemore">
+      查看更多
+    </navigator>
+    <view style="clear:both;"></view>
+    <view style="width:750rpx;">
+      <swiper skip-hidden-item-layout="true" circular autoplay interval="3000" display-multiple-items="2.5" style="width:750rpx;height:480rpx;margin-top:30rpx">
+        <block wx:for="{{groupList}}" wx:key="index">
+          <swiper-item style="height:450rpx;">
+            <view style="background:#f2f2f2;width:10rpx;float:left;">
+            </view>
+            <view style="float:right;background:#fff;width:290rpx;">
+              <image src="{{item.img_url}}" style="width:290rpx;height:290rpx;" lazy-load='{{true}}'/>
+              <view style="height:160rpx">
+                <view class="goodTitle">{{item.name}}</view>
+                <view class="line">
+                  <text style="color:#f55;font-weight:800">
+                                    ￥{{item.price}}
+                                </text>
+                  <text style="color:#aeaeae">
+                                    {{item.sales_count}}人付款
+                                </text>
+                </view>
+              </view>
+            </view>
+            <view style="clear:both"></view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <view class="mainTitle">
+    <view style="height:60rpx"></view>
+    <view class="tarit">
+      品质优选
+    </view>
+    <navigator url="/pages/groupTrait/groupTrait" hover-stop-propagation="true" hover-class="none" class="seemore">
+      查看更多
+    </navigator>
+    <view style="clear:both;"></view>
+    <list list="{{goodList}}" />
+    <view style="clear:both;"></view>
+  </view>
+</view>
+<view wx:if = "{{!islast}}" style="font-size:30rpx;line-height:100rpx;text-align:center;color:#aeaeae">
+  <text class="font icon-jiazai"></text>加载中
+</view>
+  <view wx:if = "{{islast}}" style="font-size:30rpx;line-height:100rpx;text-align:center;color:#aeaeae">
+    已加载全部
+  </view>

@@ -1,0 +1,97 @@
+<!-- pages/sign/sign.wxml -->
+<!-- <import src="/pages/template/publicTemplate.wxml" />
+<template is="header" data="{{title:'订单结算'}}" /> -->
+<head title="订单结算" />
+<loading wx:if="{{showLoading}}">加载中</loading>
+<view class="main">
+    <!-- 主体 -->
+    <view class="addressBox bg-index">
+        <view class="address" hover-class="none" catchtap="goaddressPage">
+            <view wx:if="{{!AddressNull}}" class="address_iconBox">
+                <image src="/image/free-icon.png" mode="widthFix" style="width:100%;"></image>
+            </view>
+            <view class="address_textBox">
+                <view wx:if="{{!AddressNull}}">
+                    <view>
+                        <view class="username">{{addressInfo.name}}</view>
+                        <view class="phone">{{addressInfo.phone}}</view>
+                    </view>
+                    <view class="address_address">{{addressInfo.city}}{{addressInfo.address}}</view>
+                </view>
+                <view wx:else>
+                    <view class="add_address_btn">新增收货地址</view>
+                </view>
+            </view>
+        </view>
+        <view style="height:220rpx;clear:both"></view>
+        <view style="background:#fff">
+            <view class="good_shop" hover-class="none" hover-stop-propagation="false">
+                <image class="shop_icon" src="{{shop_info.icon}}" mode="widthFix" lazy-load="false"></image>
+                <view class="shop_name" hover-class="none" hover-stop-propagation="false">
+                    {{shop_info.name}}
+                </view>
+            </view>
+        </view>
+        <view class="good_info" hover-class="none" hover-stop-propagation="false">
+            <image class="good_image" src="{{checkimgUrl}}" mode="widthFix" lazy-load="false"></image>
+            <view class="good_text" hover-class="none" hover-stop-propagation="false">
+                <view class="good_title" hover-class="none" hover-stop-propagation="false">
+                    {{goodTitle}}
+                </view>
+                <view class="good_desc" hover-class="none" hover-stop-propagation="false">
+                    {{cargoDesc}}
+                </view>
+                <view class="good_price" hover-class="none" hover-stop-propagation="false">
+                    ￥{{price}}/件
+                </view>
+            </view>
+        </view>
+        <view class="orther_item" hover-class="none" hover-stop-propagation="false">
+            <view class="item_title" hover-class="none" hover-stop-propagation="false">购买数量</view>
+            <view class="item_num_picker" hover-class="none" hover-stop-propagation="false">
+                <button hover-stop-propagation='true' disabled='{{num<2}}' catchtap="subtract">
+                    -
+                </button>
+                <view class="item_num" hover-class="none" hover-stop-propagation="false">
+                    {{num}}
+                </view>
+                <button hover-stop-propagation='true' disabled='{{num>98}}' catchtap="addnum">
+                    +
+                </button>
+            </view>
+        </view>
+        <view class="orther_item" hover-class="none" hover-stop-propagation="false">
+            <view class="item_title" hover-class="none" hover-stop-propagation="false">配送方式</view>
+            <view class="item_num_picker" hover-class="none" hover-stop-propagation="false">
+                <picker bindchange="bindPickerChange" value="{{ps_index}}" range="{{ps_arr}}">
+                    <view class="picker">{{ps_arr[ps_index]}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="item_liuyan_box" hover-class="none" hover-stop-propagation="false">
+            <view class="item_title" hover-class="none" hover-stop-propagation="false">买家留言</view>
+            <textarea maxlength="65" class="item_liuyan" value="{{liuyan}}"></textarea>
+        </view>
+        <view class="orther_item" hover-class="none" hover-stop-propagation="false">
+            <view class="item_title" hover-class="none" hover-stop-propagation="false">订单金额</view>
+            <view class="item_num_picker" hover-class="none" hover-stop-propagation="false">
+                <view class="item_order_price">￥{{(price*100* num)/100}}</view>
+            </view>
+        </view>
+        <view class="orther_item" hover-class="none" hover-stop-propagation="false">
+            <view class="item_title" hover-class="none" hover-stop-propagation="false">优惠券</view>
+            <view class="item_num_picker" hover-class="none" hover-stop-propagation="false">
+                <view class="item_order_price">￥{{(price*100* num)/100}}</view>
+            </view>
+        </view>
+        <view class="order_bottom" hover-class="none" hover-stop-propagation="false" style="padding-bottom:{{isIphoneX?'70rpx':'20rpx'}}">
+            <view class="order_tip" hover-class="none" hover-stop-propagation="false">
+                共计 {{num}} 件商品，实付款
+                <view style="display:inline;color:#f55">￥{{(price*100* num)/100}}</view>
+            </view>
+            <view class="order_confirm_btn" hover-class="none" hover-stop-propagation="false">
+                提交订单
+            </view>
+        </view>
+    </view>
+</view>

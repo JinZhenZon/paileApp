@@ -1,0 +1,12 @@
+<!-- 
+    自定义模态框
+ -->
+<view wx:if = "{{show}}" style = "width:{{config.outWidth||260}}rpx;height:{{config.outHeight||260}}rpx;border-radius:{{config.outRadius||20}}rpx" class="jim-model-box" hover-class="none" hover-stop-propagation="false">
+    <view wx:if = "{{config.showIcon || true}}" class="jim-model-icon" hover-class="none" hover-stop-propagation="false">
+        <text class="font {{config.iconClass}}" style = "{{config.showText!=undefind && !config.showText?'line-height:'+(config.outHeight||260)+'rpx':'line-height:'+((config.outHeight/2)||130)+'rpx'}}" selectable="false" space="false" decode="false">
+        </text>
+    </view>
+    <view wx:if = "{{config.showText || true}}" style = "{{config.showText!=undefind && !config.showIcon?'line-height:'+(config.outHeight||260)+'rpx':'line-height:'+((config.outHeight/2)||130)+'rpx'}}" class="jim-model-text" hover-class="none" hover-stop-propagation="false">
+        {{config.title}}
+    </view>
+</view>

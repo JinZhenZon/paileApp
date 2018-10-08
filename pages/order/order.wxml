@@ -1,0 +1,104 @@
+<head title="我的订单" />
+<view class="menu" hover-class="none" hover-stop-propagation="true">
+  <view class="menu_box" hover-class="none" hover-stop-propagation="false">
+    <view class="menu_box_check {{currentNum==0?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="0">
+      全部
+    </view>
+    <view class="menu_box_check  {{currentNum==1?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="1">
+      待付款
+    </view>
+    <view class="menu_box_check {{currentNum==2?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="2">
+      待发货
+    </view>
+    <view class="menu_box_check {{currentNum==3?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="3">
+      待收货
+    </view>
+    <view class="menu_box_check {{currentNum==4?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="taggleMenu" data-num="4">
+      待评价
+    </view>
+  </view>
+  <view style="height:80rpx"></view>
+</view>
+<swiper class="swiperBox" current="{{currentNum}}" skip-hidden-item-layout="true" bindchange="swiperChange">
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="addLoadAll">
+      <list list="{{allArr}}" bindGetNextPage = "addLoadAll"/>
+      <view wx:if="{{ allIsLast && allArr.length != 0 }}" class="tip">
+        没有更多了
+      </view>
+
+      <view wx:if="{{!allIsLast}}" class="tip">
+        <text class="font icon-jiazai"></text>加载中
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="addLoadPand">
+      <list list="{{pandArr}}" bindGetNextPage = "addLoadPand"/>
+      <view wx:if="{{pandIsLast  && pandArr.length != 0}}" class="tip">
+        没有更多了
+      </view>
+      <view class="none_order_box" wx:if="{{pandIsLast && pandArr.length == 0}}">
+        <view>
+          <text class="font icon-zanwuneirong" ></text>
+        </view>
+        <view>暂无订单</view>
+      </view>
+      <view wx:if="{{!pandIsLast}}" class="tip">
+        <text class="font icon-jiazai"></text>加载中
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="addLoadSend">
+      <list list="{{sendArr}}" bindGetNextPage = "addLoadSend"/>
+      <view wx:if="{{sendIsLast  && sendArr.length != 0}}" class="tip">
+        没有更多了
+      </view>
+      <view class="none_order_box" wx:if="{{sendIsLast && sendArr.length == 0}}">
+        <view>
+          <text class="font icon-zanwuneirong"></text>
+        </view>
+        <view>暂无订单</view>
+      </view>
+      <view wx:if="{{!sendIsLast}}" class="tip">
+        <text class="font icon-jiazai"></text>加载中
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="addLoadFor">
+      <list list="{{forArr}}" bindGetNextPage = "addLoadFor"/>
+      <view wx:if="{{forIsLast  && forArr.length != 0}}" class="tip">
+        没有更多了
+      </view>
+      <view class="none_order_box" wx:if="{{forIsLast && forArr.length == 0}}">
+        <view>
+          <text class="font icon-zanwuneirong"></text>
+        </view>
+        <view>暂无订单</view>
+      </view>
+      <view wx:if="{{!forIsLast}}" class="tip">
+        <text class="font icon-jiazai"></text>加载中
+      </view>
+
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" style="height:100%;" bindscrolltolower="addLoadEval">
+      <list list="{{evalArr}}" bindGetNextPage = "addLoadEval"/>
+      <view wx:if="{{evalIsLast  && evalArr.length != 0}}" class="tip">
+        没有更多了
+      </view>
+      <view class="none_order_box" wx:if="{{evalIsLast && evalArr.length == 0}}">
+        <view>
+          <text class="font icon-zanwuneirong"></text>
+        </view>
+        <view>暂无订单</view>
+      </view>
+      <view wx:if="{{!evalIsLast}}" class="tip">
+        <text class="font icon-jiazai"></text>加载中
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

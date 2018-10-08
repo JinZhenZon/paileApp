@@ -1,0 +1,109 @@
+<wxs src="./filter.wxs" module="filter" />
+
+<head title="佣金分享"></head>
+<view class="title_fixed" hover-class="none" hover-stop-propagation="false">
+  <view class="title_box" hover-class="none" hover-stop-propagation="false">
+    <view class="title_left" hover-class="none" hover-stop-propagation="false">
+      <view class="price" hover-class="none" hover-stop-propagation="false">
+        <view style="display:inline;font-size:25rpx;">￥ </view>{{filter.fix(yjIncomed,2)}}
+      </view>
+      <view class="text" hover-class="none" hover-stop-propagation="false">
+        已收入的佣金
+      </view>
+    </view>
+    
+    <view class="title_right" catchtap='visit' hover-class="none" hover-stop-propagation="false">
+      <button  class="invis_btn" data-type = "{{1}}" open-type='share'>
+          邀请加入
+          <view class="btn_icon">
+            <image src="/image/right.png" mode="widthFix" />
+          </view>
+      </button>
+    </view>
+  
+  </view>
+  <view class="tabBar" hover-class="none" hover-stop-propagation="false">
+    <view catchtap="toggle" data-num="0" class="bar_inner {{currentnum == 0 ? 'hover':'normal'}}" hover-class="none" hover-stop-propagation="false">
+      已分享商品
+    </view>
+    <view catchtap="toggle" data-num="1" class="bar_inner {{currentnum == 1 ? 'hover':'normal'}}" hover-class="none" hover-stop-propagation="false">
+      佣金收入
+    </view>
+  </view>
+</view>
+<view style="height:332rpx;"></view>
+<!-- 已分享商品 -->
+<view class="list" style="display:{{currentnum == 0 ? 'block':'none'}}">
+  <block wx:for="{{sharedGood}}" wx:key="{{index}}" wx:for-item="item">
+    <view class="columns" hover-class="none" hover-stop-propagation="false">
+      <view class="columns_left" hover-class="none" hover-stop-propagation="false">
+        <image class="columns_image" src="{{item.icon}}" lazy-load="true">
+        </image>
+      </view>
+      <view class="columns_right" hover-class="none" hover-stop-propagation="false">
+        <view class="columns_title" hover-class="none" hover-stop-propagation="false">
+          {{item.title}}
+        </view>
+        <view class="columns_price_box" hover-class="none" hover-stop-propagation="false">
+          <view class="columns_normal_price" hover-class="none" hover-stop-propagation="false">
+            现价：￥ {{item.cargoPrice/100}}
+          </view>
+          <view class="columns_price" hover-class="none" hover-stop-propagation="false">
+            劵后价：￥ {{(item.cargoPrice-item.discountPrice)/100}}
+          </view>
+        </view>
+        <view class="btn_box" hover-class="none" hover-stop-propagation="false">
+          <button open-type='share' data-type = "{{2}}" data-item = "{{item}}" class="share_btn bg-index" hover-class="none" hover-stop-propagation="false">
+            分享赚钱
+          </button>
+          <view class="share_text" hover-class="none" hover-stop-propagation="false">
+            赚{{filter.fix((item.cargoPrice - item.discountPrice) * (item.quotaValue / 100) / 100 * 0.7,2)}}
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  </block>
+  <view class="isLoading" wx:if="{{!sharedIsLast}}">
+    <text class="font icon-jiazai"></text>加载中
+  </view>
+  <view class="isLast" wx:if="{{sharedIsLast}}">已加载所有</view>
+</view>
+<!-- 佣金收入 -->
+<view class="list" style="display:{{currentnum == 1 ? 'block':'none'}}">
+  <!-- [{"cargoCode":1619,"cargoPicture":"http://image-paile.paile8.com/web/153429937518913db.jpg","cargoPrice":100,"cargoTitle":"ins超火鞋子女2018春季韩版休闲运动鞋百搭学生原宿风板鞋","commissionLevel":1,"incomeAmount":21,"incomeCode":7,"incomeTime":"2018-08-17 20:07:15","incomeorType":3,"orderNumber":"01153450659600000000","orderUserCode":393,"orderUserNickname":null,"userCode":96}] -->
+  <block wx:for="{{income}}" wx:key="{{index}}">
+    <view class="list_box">
+      <view class="inner_box" hover-class="none" hover-stop-propagation="false">
+        <view class="inner_left" hover-class="none" hover-stop-propagation="false">
+          <image src="{{item.cargoPicture}}" lazy-load="true" />
+        </view>
+        <view class="inner_center" hover-class="none" hover-stop-propagation="false">
+          <view class="cargoTitle" hover-class="none" hover-stop-propagation="false">
+            {{item.cargoTitle}}
+          </view>
+          <view class="cargoSpec" hover-class="none" hover-stop-propagation="false">
+            {{item.commissionLevel}}级分享收入
+          </view>
+          <view class="income_time" hover-class="none" hover-stop-propagation="false">
+            {{item.incomeTime}}
+          </view>
+        </view>
+        <view class="inner_right" hover-class="none" hover-stop-propagation="false">
+          <view class="income_icon" hover-class='none' hover-hover-stop-propagation='false'>
+            <image src="http://pics.sc.chinaz.com/Files/pic/icons128/5563/1.png"></image>
+          </view>
+          <view class="income" hover-class="none" hover-stop-propagation="false">
+            ￥{{item.incomeAmount/100}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="isLoading" wx:if="{{!incomIsLast}}">
+    <text class="font icon-jiazai"></text>加载中
+  </view>
+  <view class="isLast" wx:if="{{incomIsLast}}">已加载所有</view>
+</view>
+<tipbox config = "{{tipConfig}}" id = "tipbox"/>

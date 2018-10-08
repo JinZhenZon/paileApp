@@ -1,0 +1,8 @@
+var filter = {
+  fix:function(val,num){
+      return parseFloat(val).toFixed(num);
+  }
+}
+module.exports = {
+  fix : filter.fix
+}

@@ -1,0 +1,36 @@
+<!-- pages/pingjiaAll/pingjiaAll.wxml -->
+<template name = "pj_content_box">
+</template>
+<head title = "商品评价"></head>
+<view class="pj_title" hover-class="none" hover-stop-propagation="false">
+    <view class="pj_title_insert {{toggleNum == 1?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="toggle" data-num = "1">
+        全部
+    </view>
+    <view class="pj_title_insert  {{toggleNum == 2?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="toggle" data-num = "2">
+        有图
+    </view>
+    <view class="pj_title_insert  {{toggleNum == 3?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="toggle" data-num = "3">
+        无图
+    </view>
+    <view class="pj_title_insert  {{toggleNum == 4?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="toggle" data-num = "4">
+        好评
+    </view>
+    <view class="pj_title_insert  {{toggleNum == 5?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="toggle" data-num = "5">
+        中评
+    </view>
+    <view class="pj_title_insert  {{toggleNum == 6?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap="toggle" data-num = "6">
+        差评
+    </view>
+
+</view>
+<pj_content list = "{{pjAllList}}" style = "{{toggleNum==1?'display:block':'display:none'}}"/>
+<pj_content list = "{{pjimageList}}" style = "{{toggleNum==2?'display:block':'display:none'}}"/>
+<pj_content list = "{{pjtextList}}" style = "{{toggleNum==3?'display:block':'display:none'}}"/>
+<pj_content list = "{{pjgoodList}}" style = "{{toggleNum==4?'display:block':'display:none'}}"/>
+<pj_content list = "{{pjmiddleList}}" style = "{{toggleNum==5?'display:block':'display:none'}}"/>
+<pj_content list = "{{pjbadList}}" style = "{{toggleNum==6?'display:block':'display:none'}}"/>
+
+<view class="tip" hover-class="none" hover-stop-propagation="false">
+    <text class="font icon-jiazai" selectable="false" space="false" decode="false"></text>
+    加载中
+</view>

@@ -1,0 +1,111 @@
+<head title = "我的试用" />
+<view class="menu" hover-class="none" hover-stop-propagation="true">
+    <view class="menu_box" hover-class="none" hover-stop-propagation="false">
+        <view class="menu_box_check {{currentNum==0?'hover':'normal'}}"hover-class="none" hover-stop-propagation="false"  catchtap = "taggleMenu" data-num = "0">
+            全部申请
+        </view>
+        <view class="menu_box_check  {{currentNum==1?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap = "taggleMenu" data-num = "1">
+           待分享
+        </view>
+        <view class="menu_box_check {{currentNum==2?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap = "taggleMenu" data-num = "2">
+            待抽奖
+        </view>
+        <view class="menu_box_check {{currentNum==3?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap = "taggleMenu" data-num = "3">
+            申请成功
+        </view>
+        <view class="menu_box_check {{currentNum==4?'hover':'normal'}}" hover-class="none" hover-stop-propagation="false" catchtap = "taggleMenu" data-num = "4">
+            申请失败
+        </view>
+    </view>
+    <view style = "height:80rpx"></view>
+</view>
+
+
+<swiper class = "swiperBox" current = "{{currentNum}}" skip-hidden-item-layout = "true" bindchange = "swiperChange">
+          <swiper-item >
+            <scroll-view scroll-y = "true" style = "height:100%;" bindscrolltolower = "loadMoreAll">
+              <list list = "{{allArr}}"/>
+              <view class = "loading" wx:if = "{{!allIsLast}}">
+                  <text class = "font icon-jiazai"/>加载中
+              </view>
+              <view class = "isLast" wx:if = "{{allIsLast && allArr.length != 0}}">
+                    已加载全部
+                </view>  
+                <view class="none_order_box" wx:if="{{allIsLast && allArr.length == 0}}">
+                  <view>
+                    <text class="font icon-zanwuneirong" ></text>
+                  </view>
+                  <view>暂无订单</view>
+                </view>
+            </scroll-view>
+          </swiper-item>
+          <swiper-item>
+            <scroll-view scroll-y = "true" style = "height:100%;" bindscrolltolower = "loadMoreFreeing">
+                <list list = "{{freeingArr}}"/>     
+                <view class = "loading" wx:if = "{{!freeingLast}}">
+                    <text class = "font icon-jiazai"/>加载中
+                </view>
+                <view class = "isLast" wx:if = "{{freeingLast && freeingArr.length != 0}}">
+                    已加载全部
+                </view>  
+                <view class="none_order_box" wx:if="{{freeingLast && freeingArr.length == 0}}">
+                  <view>
+                    <text class="font icon-zanwuneirong" ></text>
+                  </view>
+                  <view>暂无订单</view>
+                </view>
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+            <scroll-view scroll-y = "true" style = "height:100%;" bindscrolltolower = "loadMoreLuck">
+                <list list = "{{luckArr}}"/>     
+                <view class = "loading" wx:if = "{{!luckLast}}">
+                    <text class = "font icon-jiazai"/>加载中
+                </view>
+                <view class = "isLast" wx:if = "{{luckLast && luckArr.length != 0}}">
+                    已加载全部
+                </view>  
+                <view class="none_order_box" wx:if="{{luckLast && luckArr.length == 0}}">
+                  <view>
+                    <text class="font icon-zanwuneirong" ></text>
+                  </view>
+                  <view>暂无订单</view>
+                </view>
+                
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+            <scroll-view scroll-y = "true" style = "height:100%;" bindscrolltolower = "loadMoreSuccess">
+                <list list = "{{successArr}}"/>   
+                <view class = "loading" wx:if = "{{!successLast}}">
+                    <text class = "font icon-jiazai"/>加载中
+                </view>
+                <view class = "isLast" wx:if = "{{successLast && successArr.length != 0}}">
+                    已加载全部
+                </view>  
+                <view class="none_order_box" wx:if="{{successLast && successArr.length == 0}}">
+                  <view>
+                    <text class="font icon-zanwuneirong" ></text>
+                  </view>
+                  <view>暂无订单</view>
+                </view>
+              </scroll-view>
+          </swiper-item>
+          <swiper-item>
+            <scroll-view scroll-y = "true" style = "height:100%;">
+                <list list = "{{failArr}}"/> 
+                <view class = "loading" wx:if = "{{!failLast}}" bindscrolltolower = "loadMoreFail">
+                    <text class = "font icon-jiazai"/>加载中
+                </view>
+                <view class = "isLast" wx:if = "{{failLast && failArr.length != 0}}">
+                    已加载全部
+                </view>
+                <view class="none_order_box" wx:if="{{failLast && failArr.length == 0}}">
+                  <view>
+                    <text class="font icon-zanwuneirong" ></text>
+                  </view>
+                  <view>暂无订单</view>
+                </view>    
+              </scroll-view>
+          </swiper-item>
+    </swiper> 

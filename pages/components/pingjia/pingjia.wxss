@@ -1,0 +1,84 @@
+/* pages/components/pingjia/pingjia.wxss */
+@import "../../../utils/iconfont.wxss";
+.title{
+  background:#f2f2f2;
+  color:#aeaeae;
+  font-size:30rpx;
+  line-height:80rpx;
+  height:80rpx;
+}
+.title text{
+  width:720rpx;
+  padding-left:15rpx;
+  display: inline-block;
+  margin:0 auto;
+}
+/* 评价 */
+.personIcon{
+  width:50rpx;
+}
+.personIcon image{
+  border-radius:8rpx;
+  overflow: hidden;
+  margin-top:10rpx;
+}
+.personName{
+  font-size:30rpx;
+  line-height:50rpx;
+  height:50rpx;
+  width:600rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.box{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  width:720rpx;
+  margin:0 auto;
+}
+/* 评价文字 */
+.pj_text{
+    font-size:30rpx;
+    color:#aeaeae;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height:45rpx;
+    max-height:90rpx;
+    word-break:break-all;
+
+}
+/* 评价图片 */
+.pj_image{
+  display: flex;
+  display: -webkit-flex;
+  justify-content:start;
+  flex-wrap:wrap ;
+}
+.pj_image image{
+    width:230rpx;
+    height:230rpx;
+    margin-top:10rpx;
+    margin-left:10rpx;
+}
+.pj_image image:nth-child(3n+1){
+    margin-left:0;
+}
+/* 评价查看全部 */
+.seeAll {
+   width:270rpx;
+   text-align:center;
+   color:rgb(236, 133, 135);
+    margin:0 auto;
+    font-size:30rpx;
+    line-height:60rpx;
+    border-radius:30rpx;
+    border:1rpx solid rgb(236, 133, 135);
+    margin-top:20rpx;
+    margin-bottom:20rpx;
+}
+

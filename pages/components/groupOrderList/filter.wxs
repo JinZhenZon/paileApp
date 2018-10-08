@@ -1,0 +1,47 @@
+var filter = {
+  filterStatus:function(status){
+    switch (parseInt(status)){
+      case 1:return "已完成";break;
+      case 3: return "拼团失败"; break;
+      case 5: return "待付款"; break;
+      case 7: return "拼团中"; break;
+      case 8: return "待发货"; break;     
+      case 10: return "待收货"; break;
+      case 15: return "待评价"; break;
+    }  
+  },
+  timeTostr:function(str){
+    var hour = Math.floor(str / 3600);
+    var minute = Math.floor((str - hour * 3600) / 60);
+    var sec = Math.floor(str - hour * 3600 - minute * 60);
+    if (hour < 10) {
+      if (hour >= 0) {
+        hour = "0" + hour;
+      } else {
+        hour = 0;
+      }
+    }
+    if (minute < 10) {
+      if (minute >= 0) {
+        minute = "0" + minute;
+      } else {
+        minute = 0;
+      }
+    }
+
+    if (sec < 10) {
+      if (sec >= 0) {
+        sec = "0" + sec;
+      } else {
+        sec = 0;
+      }
+    }
+    return hour + ":" + minute + ":" + sec;
+  }
+
+}
+
+module.exports = {
+  filterStatus: filter.filterStatus,
+  timeTostr: filter.timeTostr
+}

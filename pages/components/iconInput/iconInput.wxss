@@ -1,0 +1,29 @@
+/* pages/components/iconInput/iconInput.wxss */
+@import "../../../utils/iconfont.wxss";
+.box{
+  background:#eee;
+  height:60rpx;
+  display:-webkit-flex;
+  display:flex;
+  justify-content:space-around;
+  border-radius:60rpx;
+  padding-right:10rpx;
+  padding-left:10rpx;
+}
+.icon{
+  width:40rpx;
+  height:40rpx;
+  margin-top:10rpx;
+}
+
+.searchHolder{
+  text-align:left;
+  line-height:60rpx;
+  color:#999;
+}
+.search{
+  line-height: 60rpx;
+  height:60rpx;
+  font-size:40rpx;
+  color:#666;
+}

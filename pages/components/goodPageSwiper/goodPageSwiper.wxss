@@ -1,0 +1,9 @@
+/* pages/components/goodPageSwiper/goodPageSwiper.wxss */
+.bowerSlide{
+  width:750rpx;
+  height:750rpx;
+}
+.slideImage{
+  width:750rpx;
+  height:750rpx;
+}

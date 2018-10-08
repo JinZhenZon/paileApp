@@ -1,0 +1,5 @@
+<view class="com-widget-goTop" catchtap='gotop' wx:if = "{{isShow}}" >
+      <view class="icon-gotop">
+          顶部
+      </view>
+</view>

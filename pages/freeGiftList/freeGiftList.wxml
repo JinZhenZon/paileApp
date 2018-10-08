@@ -1,0 +1,48 @@
+
+
+<view hover-class='none' class = "{{list.length==0?'notData_box':''}}">
+    <head title="免费领取" />
+    <view animation="{{animationData}}" hidden='{{tipHide}}' class="tip" hover-class="none" hover-stop-propagation="false">
+      <text class="tip_text" selectable="false" space="false" decode="false">免费领取的商品需通过分享链接的方式找到朋友参团，参团人数达到要求人数即为参与成功，数量有限，先到先得。
+        </text>
+      <text class="font icon-cuowu " selectable="false" space="false" decode="false" catchtap='hiddenTip'></text>
+    </view>
+    <!-- 在这里啊开始遍历-->
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <view class="list lineBox" hover-class="none" hover-stop-propagation="false">
+        <view class="good_pic" hover-class="none" hover-stop-propagation="false">
+          <image src="{item.cargoPicture}" lazy-load="true"></image>
+        </view>
+        <view class="good_content" hover-class="none" hover-stop-propagation="{{false}}">
+          <view class="good_title" hover-class='none' hover-stop-propagation='{{false}}'>
+            {{item.cargoTitle}}
+          </view>
+
+          <view class="price_box" hover-class="none" hover-stop-propagation="false">
+            <view class="price" hover-class="none" hover-stop-propagation="{{false}}">价值：￥{{item.cargoPrice/100}}</view>
+            <view class="needperson" hover-class="none" hover-stop-propagation="{{false}}">需{{item.groupbuyCount}}人参团</view>
+            <view class="free_btn " hover-class="none" hover-stop-propagation="{{false}}">
+              <text selectable="{{false}}" space="{{false}}" decode="{{true}}">免费拿&gt;</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- 针对不同的状态显示不同的提示 -->
+    <view  wx:if = "{{firstRequested && list.length==0}}" style = "display:flex;flex-grow:2;height:auto;background:#fff;">
+         <view class= "box_style">
+          <view class = "nodata_icon">
+            <text class = "font icon-zanwuneirong"></text>
+          </view>
+          <view class = "nodata_text">
+             还没有数据呢
+          </view>
+          </view>
+    </view>
+    <view class="tip_bt" wx:elif="{{!firstRequested || !islast}}">
+      <text class="font icon-jiazai"></text>加载中
+    </view>
+    <view class="tip_bt" wx:else>
+      暂无更多
+    </view>
+</view>

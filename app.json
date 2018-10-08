@@ -1,0 +1,72 @@
+{
+  "debug": false,
+  "pages": [
+    "pages/index/index",
+    "pages/goodShow/goodShow",    
+    "pages/addressPage/addressPage",    
+    "pages/order/order",
+    "pages/me/me",
+    "pages/freeOrder/freeOrder",
+    "pages/shop/shop",
+    "pages/seachPage/seachPage",
+    "pages/searchEnd/searchEnd",
+    "pages/freeGiftList/freeGiftList",
+    "pages/freeList/freeList",
+    "pages/trait/trait",
+    "pages/wallet/wallet",
+    "pages/yjorder/yjorder",
+    "pages/sign/sign",
+    "pages/groupTrait/groupTrait",
+    "pages/groupOrder/groupOrder",
+    "pages/orderInsert/orderInsert",
+    "pages/pingjiaAll/pingjiaAll",
+    "pages/pingjiasert/pingjiasert",
+    "pages/seeting/seeting"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationStyle": "custom",
+    "backgroundColor": "#fff",
+    "navigationBarTitleText": "拍乐网",
+    "navigationBarTextStyle": "white ",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 500
+  },
+  "tabBar": {
+    "color": "#c2c2c2",
+    "selectedColor": "#ff0000",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/free-icon.png",
+        "selectedIconPath": "image/group-icon.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/free-icon.png",
+        "selectedIconPath": "image/group-icon.png",
+        "text": "附近"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/free-icon.png",
+        "selectedIconPath": "image/group-icon.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "image/free-icon.png",
+        "selectedIconPath": "image/group-icon.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000
+  }
+}
